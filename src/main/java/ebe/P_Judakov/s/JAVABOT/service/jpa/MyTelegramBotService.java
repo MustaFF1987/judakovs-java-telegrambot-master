@@ -12,7 +12,6 @@ public class MyTelegramBotService extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         // Метод для обработки входящих сообщений и команд от пользователей.
-
         if (update.hasMessage() && update.getMessage().hasText()) {
             String text = update.getMessage().getText();
             if ("/start".equals(text)) {
