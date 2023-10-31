@@ -17,9 +17,9 @@ public class StopCommandImpl implements StopCommand {
         this.bot = bot;
     }
 
+    // Реализация логики для команды "stop"
     @Override
-    public void execute() {
-        // Реализация логики для команды "stop"
+    public void executeStop() {
         // Сообщение пользователю о завершении работы бота
         sendTextMessage(chatId, "Работа бота завершена.");
     }
