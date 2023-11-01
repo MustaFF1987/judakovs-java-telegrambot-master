@@ -12,4 +12,6 @@ public interface TelegramBotService {
 
     // Получение токена бота
     String getBotToken();
+
+    void init();
 }

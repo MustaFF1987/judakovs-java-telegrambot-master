@@ -1,10 +1,12 @@
 package ebe.P_Judakov.s.JAVABOT.service.jpa;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 
 public class MyTelegramBotService extends TelegramLongPollingBot {
@@ -16,7 +18,8 @@ public class MyTelegramBotService extends TelegramLongPollingBot {
             String text = update.getMessage().getText();
             if ("/start".equals(text)) {
                 // Отправляем ответное сообщение
-                sendTextMessage(update.getMessage().getChatId(), "Привет! Я ваш Telegram бот для работы с котировками на бирже.");
+                sendTextMessage(update.getMessage().getChatId(),
+                "Привет! Я ваш Telegram бот для работы с котировками на бирже.");
             }
         }
     }
@@ -32,6 +35,17 @@ public class MyTelegramBotService extends TelegramLongPollingBot {
         // Токен бота, который получили при регистрации в Telegram
         return "6669687693:AAGVbVs_AHL22m0w-7rjPW8_h_alNLV6jBo";
     }
+
+    public void init() {
+        try {
+            TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
+            telegramBotsApi.registerBot(this);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+            // Обработка ошибок при регистрации бота
+        }
+    }
+
 
     // Метод для отправки текстовых сообщений
     private void sendTextMessage(Long chatId, String text) {
