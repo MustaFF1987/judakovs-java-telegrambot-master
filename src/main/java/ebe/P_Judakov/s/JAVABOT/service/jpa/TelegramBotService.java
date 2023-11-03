@@ -76,6 +76,17 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
         }
     }
 
+    @Override
+    public Message execute(SendMessage message) {
+        try {
+            return execute(message); // Отправка сообщения и возвращение результата
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Обработка ошибок при отправке сообщения
+            System.out.println("Ошибка ри отправке сообщения");
+            return null; // Возвращаем null в случае ошибки
+        }
+    }
 
     // Метод для отправки текстовых сообщений
     public void sendTextMessage(Long chatId, String text) throws TelegramApiException {
@@ -83,7 +94,7 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
         message.setChatId(chatId.toString());
         message.setText(text);
 
-        Message sentMessage = (Message) execute(message);
+        Message sentMessage = execute(message);
         // Обработка успешной отправки сообщения (sentMessage содержит информацию о сообщении)
         System.out.println("Сообщение успешно отправлено: " + sentMessage);
     }
@@ -95,6 +106,8 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
     @Override
     public void processCommand(org.hibernate.sql.Update update) {
     }
+
+
 
     // Метод для обработки входящих сообщений
     @Override
@@ -145,4 +158,6 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
             }
         }
     }
+
+
 }

@@ -2,6 +2,7 @@ package ebe.P_Judakov.s.JAVABOT.service.interfaces;
 
 import org.hibernate.sql.Update;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public interface TelegramBotService {
@@ -32,4 +33,6 @@ public interface TelegramBotService {
 
     // Метод для обработки команд от пользователя
     void processCommand(org.telegram.telegrambots.meta.api.objects.Update update) throws TelegramApiException;
+
+    Message execute(SendMessage message);
 }
