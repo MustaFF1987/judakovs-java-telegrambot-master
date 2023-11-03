@@ -2,17 +2,16 @@ package ebe.P_Judakov.s.JAVABOT.command;
 
 import ebe.P_Judakov.s.JAVABOT.command.interfaces.StopCommand;
 import ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.Message;
-import ebe.P_Judakov.s.JAVABOT.service.jpa.MyTelegramBotService;
+import ebe.P_Judakov.s.JAVABOT.service.jpa.TelegramBotService;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 
 public class StopCommandImpl implements StopCommand {
 
     private Long chatId;
-    private MyTelegramBotService bot;
+    private TelegramBotService bot;
 
-    public StopCommandImpl(Long chatId, MyTelegramBotService bot) {
+    public StopCommandImpl(Long chatId, TelegramBotService bot) {
         this.chatId = chatId;
         this.bot = bot;
     }
@@ -29,15 +28,9 @@ public class StopCommandImpl implements StopCommand {
         message.setChatId(chatId.toString());
         message.setText(text);
 
-        try {
-            Message sentMessage = (Message) bot.execute(message);
-            // Обработка успешной отправки сообщения (sentMessage содержит информацию о сообщении)
-            System.out.println("Сообщение успешно отправлено: " + sentMessage);
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-            // Обработка ошибок отправки сообщения
-            System.err.println("Ошибка при отправке сообщения: " + e.getMessage());
-        }
+        Message sentMessage = (Message) bot.execute(message);
+        // Обработка успешной отправки сообщения (sentMessage содержит информацию о сообщении)
+        System.out.println("Сообщение успешно отправлено: " + sentMessage);
     }
 
 
