@@ -12,7 +12,6 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 @Service
 public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_Judakov.s.JAVABOT.service.interfaces.TelegramBotService {
 
-    // Метод для обработки входящего обновления от Telegram API
     @Override
     public void onUpdateReceived(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
@@ -21,12 +20,7 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
 
             if (text.startsWith("/start")) {
                 // Обработка команды /start
-                String responseText = "Привет! Вы запустили бота для получения информации о котировках на бирже.";
-                try {
-                    sendTextMessage(chatId, responseText);
-                } catch (TelegramApiException e) {
-                    throw new RuntimeException(e);
-                }
+                sendWelcomeMessage(chatId); // Вызов метода sendWelcomeMessage()
             } else if (text.startsWith("/help")) {
                 // Обработка команды /help
                 String responseText = "Список доступных команд: /start, /help, /stop, /subscribe, /unsubscribe";
@@ -53,6 +47,9 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
+            } else if (text.startsWith("/stop")) {
+                // Обработка команды /stop
+                sendStopMessage(chatId); // Вызов метода sendStopMessage()
             } else {
                 // Обработка неизвестной команды
                 String responseText = "Неизвестная команда. Используйте /help для получения списка команд.";
@@ -62,6 +59,28 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
                     throw new RuntimeException(e);
                 }
             }
+        }
+    }
+
+    // Метод для отправки приветственного сообщения
+    private void sendWelcomeMessage(Long chatId) {
+        String welcomeText = "Добро пожаловать! Я ваш телеграм-бот.";
+        welcomeText += " Начните взаимодействие с командой /help.";
+        try {
+            sendTextMessage(chatId, welcomeText);
+        } catch (TelegramApiException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    // Метод для отправки сообщения при завершении работы с ботом
+    private void sendStopMessage(Long chatId) {
+        String stopText = "Вы завершили работу с ботом.";
+        stopText += " До скорых встреч!";
+        try {
+            sendTextMessage(chatId, stopText);
+        } catch (TelegramApiException e) {
+            throw new RuntimeException(e);
         }
     }
 
