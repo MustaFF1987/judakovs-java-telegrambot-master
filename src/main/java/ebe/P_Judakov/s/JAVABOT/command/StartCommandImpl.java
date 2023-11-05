@@ -21,12 +21,13 @@ public class StartCommandImpl implements StartCommand {
             sendWelcomeMessage();
         }
 
-        private void sendWelcomeMessage() {
-            // Приветственное сообщение пользователю
-            String welcomeText = "Добро пожаловать! Я ваш бот. Начните взаимодействие с командой /help.";
-            // Метод отправки сообщения
-            sendTextMessage(chatId, welcomeText);
-        }
+    private void sendWelcomeMessage() {
+        // Приветственное сообщение пользователю
+        String welcomeText = "Добро пожаловать! Я ваш телеграм-бот.";
+        welcomeText += " Начните взаимодействие с командой /help.";
+        // Метод отправки сообщения
+        sendTextMessage(chatId, welcomeText);
+    }
 
         private void sendTextMessage(Long chatId, String text) {
             SendMessage message = new SendMessage();

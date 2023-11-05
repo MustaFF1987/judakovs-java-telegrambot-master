@@ -9,39 +9,60 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
-import java.util.List;
-
 @Service
 public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_Judakov.s.JAVABOT.service.interfaces.TelegramBotService {
 
     // Метод для обработки входящего обновления от Telegram API
     @Override
     public void onUpdateReceived(Update update) {
-        // Метод для обработки входящих сообщений и команд от пользователей.
         if (update.hasMessage() && update.getMessage().hasText()) {
             String text = update.getMessage().getText();
-            if ("/start".equals(text)) {
-                // Отправляем ответное сообщение
+            Long chatId = update.getMessage().getChatId();
+
+            if (text.startsWith("/start")) {
+                // Обработка команды /start
+                String responseText = "Привет! Вы запустили бота для получения информации о котировках на бирже.";
                 try {
-                    sendTextMessage(update.getMessage().getChatId(),
-                    "Привет! Я ваш Telegram бот для работы с котировками на бирже.");
+                    sendTextMessage(chatId, responseText);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            } else if (text.startsWith("/help")) {
+                // Обработка команды /help
+                String responseText = "Список доступных команд: /start, /help, /stop, /subscribe, /unsubscribe";
+                try {
+                    sendTextMessage(chatId, responseText);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            } else if (text.startsWith("/subscribe")) {
+                // Обработка команды /subscribe
+                SubscriptionManager.subscribe(chatId);
+                String responseText = "Вы подписались на уведомления от бота.";
+                try {
+                    sendTextMessage(chatId, responseText);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            } else if (text.startsWith("/unsubscribe")) {
+                // Обработка команды /unsubscribe
+                SubscriptionManager.unsubscribe(chatId);
+                String responseText = "Вы отписались от уведомлений от бота.";
+                try {
+                    sendTextMessage(chatId, responseText);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            } else {
+                // Обработка неизвестной команды
+                String responseText = "Неизвестная команда. Используйте /help для получения списка команд.";
+                try {
+                    sendTextMessage(chatId, responseText);
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
             }
         }
-    }
-
-    @Override
-    public void onUpdatesReceived(List<Update> updates) {
-        for (Update update : updates) {
-            onUpdateReceived(update); // Перенаправляем каждое обновление на метод onUpdateReceived
-        }
-    }
-
-    @Override
-    public void onUpdateReceived(org.hibernate.sql.Update update) {
-
     }
 
     @Override
@@ -70,7 +91,7 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
         try {
             TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
             telegramBotsApi.registerBot(this);
-            System.out.println("Бот зарегистрирован и готов к работе.");
+            System.out.println("Бот зарегистрирован и готов к работе, введите команду /start.");
         } catch (TelegramApiException e) {
             e.printStackTrace();
             // Обработка ошибок при регистрации бота
@@ -80,11 +101,11 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
     @Override
     public Message execute(SendMessage message) {
         try {
-            return execute(message); // Отправка сообщения и возвращение результата
+            return super.execute(message); // Отправка сообщения и возвращение результата
         } catch (Exception e) {
             e.printStackTrace();
             // Обработка ошибок при отправке сообщения
-            System.out.println("Ошибка ри отправке сообщения");
+            System.out.println("Ошибка при отправке сообщения");
             return null; // Возвращаем null в случае ошибки
         }
     }
@@ -100,15 +121,11 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
         System.out.println("Сообщение успешно отправлено: " + sentMessage);
     }
 
-    @Override
-    public void processIncomingMessage(org.hibernate.sql.Update update) {
-    }
 
     @Override
-    public void processCommand(org.hibernate.sql.Update update) {
+    public void onUpdateReceived(org.hibernate.sql.Update update) {
+
     }
-
-
 
     // Метод для обработки входящих сообщений
     @Override
@@ -136,29 +153,4 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
             sendTextMessage(chatId, responseText);
         }
     }
-
-    // Метод для обработки команд от пользователя
-    @Override
-    public void processCommand(Update update) throws TelegramApiException {
-        if (update.hasMessage() && update.getMessage().hasText()) {
-            String text = update.getMessage().getText();
-            Long chatId = update.getMessage().getChatId();
-
-            if (text.startsWith("/start")) {
-                // Обработка команды /start
-                String responseText = "Привет! Вы запустили бота.";
-                sendTextMessage(chatId, responseText);
-            } else if (text.startsWith("/help")) {
-                // Обработка команды /help
-                String responseText = "Список доступных команд: /start, /help";
-                sendTextMessage(chatId, responseText);
-            } else {
-                // Обработка неизвестной команды
-                String responseText = "Неизвестная команда. Используйте /help для получения списка команд.";
-                sendTextMessage(chatId, responseText);
-            }
-        }
-    }
-
-
 }

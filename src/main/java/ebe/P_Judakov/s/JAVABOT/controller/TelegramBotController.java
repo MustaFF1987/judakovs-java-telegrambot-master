@@ -59,16 +59,4 @@ public class TelegramBotController {
     }
 
 
-    @PostMapping("/process-incoming-message")
-    public ResponseEntity<String> processIncomingMessage(@RequestBody Update update) {
-        telegramBotService.processIncomingMessage(update);
-        return ResponseEntity.ok("Сообщение успешно обработано.");
-    }
-
-
-    @PostMapping("/process-command")
-    public ResponseEntity<String> processCommand(@RequestBody Update update) {
-        telegramBotService.processCommand(update);
-        return ResponseEntity.ok("Команда успешно обработана.");
-    }
 }
