@@ -1,5 +1,8 @@
 package ebe.P_Judakov.s.JAVABOT.service.jpa;
 
+import ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.SubscribedChannel;
+import ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
@@ -9,8 +12,14 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
+import java.util.List;
+
+
 @Service
 public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_Judakov.s.JAVABOT.service.interfaces.TelegramBotService {
+
+    @Autowired
+    private SubscribedChannelRepository subscribedChannelRepository;
 
     @Override
     public void onUpdateReceived(Update update) {
@@ -19,18 +28,16 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
             Long chatId = update.getMessage().getChatId();
 
             if (text.startsWith("/start")) {
-                // Обработка команды /start
-                sendWelcomeMessage(chatId); // Вызов метода sendWelcomeMessage()
+                sendWelcomeMessage(chatId);
             } else if (text.startsWith("/help")) {
                 // Обработка команды /help
-                String responseText = "Список доступных команд: /start, /help, /stop, /subscribe, /unsubscribe";
+                String responseText = "Список доступных команд: /start, /help, /stop, /subscribe, /unsubscribe, /addChannelSub, /listChannelSub";
                 try {
                     sendTextMessage(chatId, responseText);
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
             } else if (text.startsWith("/subscribe")) {
-                // Обработка команды /subscribe
                 SubscriptionManager.subscribe(chatId);
                 String responseText = "Вы подписались на уведомления от бота.";
                 try {
@@ -39,7 +46,6 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
                     throw new RuntimeException(e);
                 }
             } else if (text.startsWith("/unsubscribe")) {
-                // Обработка команды /unsubscribe
                 SubscriptionManager.unsubscribe(chatId);
                 String responseText = "Вы отписались от уведомлений от бота.";
                 try {
@@ -47,11 +53,35 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
-            } else if (text.startsWith("/stop")) {
-                // Обработка команды /stop
-                sendStopMessage(chatId); // Вызов метода sendStopMessage()
+                } else if (text.startsWith("/stop")) {
+                sendStopMessage(chatId);
+                } else if (text.startsWith("/addChannelSub")) {
+                // Пользователь хочет добавить подписку на канал
+                // Сообщение пользователю, запрашивая `channel_id`
+                String responseText = "Введите `channel_id`, чтобы добавить подписку на канал:";
+                try {
+                    sendTextMessage(chatId, responseText);
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+                SubscribedChannel subscribedChannel = new ebe.P_Judakov.s.JAVABOT.domen.entity.jpa.SubscribedChannel();
+                subscribedChannel.setChatId(Math.toIntExact(chatId));
+                subscribedChannelRepository.save(subscribedChannel);
+                subscribedChannel.setChannelTitle("Название канала");
+                subscribedChannelRepository.save(subscribedChannel); // Сохранение в базе данных
+                } else if (text.startsWith("/listChannelSub")) {
+                // Обработка команды /listChannelSub
+                List<SubscribedChannel> subscribedChannels = subscribedChannelRepository.findByChatId(chatId);
+                StringBuilder responseText = new StringBuilder("Ваши подписки:\n");
+                for (SubscribedChannel subscribedChannel : subscribedChannels) {
+                    responseText.append(subscribedChannel.getChannelTitle()).append("\n");
+                }
+                try {
+                    sendTextMessage(chatId, responseText.toString());
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
             } else {
-                // Обработка неизвестной команды
                 String responseText = "Неизвестная команда. Используйте /help для получения списка команд.";
                 try {
                     sendTextMessage(chatId, responseText);
