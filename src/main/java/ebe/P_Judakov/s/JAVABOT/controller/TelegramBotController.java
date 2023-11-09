@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 
@@ -54,7 +55,7 @@ public class TelegramBotController {
 
     @PostMapping("/send-text-message")
     public ResponseEntity<String> sendTextMessage(@RequestParam("chatId") Long chatId, @RequestParam("text") String text) throws TelegramApiException {
-        telegramBotService.sendTextMessage(chatId, text);
+        telegramBotService.sendTextMessageWithKeyboard(chatId, text, ReplyKeyboardMarkup.builder().build());
         return ResponseEntity.ok("Сообщение успешно отправлено.");
     }
 
