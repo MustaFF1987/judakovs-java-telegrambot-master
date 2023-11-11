@@ -13,6 +13,12 @@ public interface SubscribedChannel {
         void setChannelTitle(String channelsName);
 
         char[] getChannelTitle();
+
+        int getChatId();
+
+        int getLastArticleId();
+
+        void setLastArticleId(int id);
 }
 
 

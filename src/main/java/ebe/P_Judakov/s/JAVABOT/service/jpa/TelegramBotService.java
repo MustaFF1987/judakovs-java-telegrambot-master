@@ -1,6 +1,9 @@
 package ebe.P_Judakov.s.JAVABOT.service.jpa;
+import ebe.P_Judakov.s.JAVABOT.controller.CombinedController;
 import ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.SubscribedChannel;
 import ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
@@ -12,6 +15,9 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
@@ -26,6 +32,12 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
 
     // переменная для хранения ввода с клавиатуры
     private ReplyKeyboardMarkup keyboardMarkup;
+
+    private CombinedController combinedController;
+
+    public void setCombinedController(CombinedController combinedController) {
+        this.combinedController = combinedController;
+    }
 
     @Override
     public void onUpdateReceived(Update update) {
@@ -45,7 +57,7 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
                         sendWelcomeMessage(chatId, keyboardMarkup);
                     } else if (text.startsWith("/help")) {
                         // Обработка команды /help
-                        String responseText = "Список доступных команд: /start, /help, /stop, /addChannelSub, /listChannelSub";
+                        String responseText = "Список доступных команд: /start, /help, /stop, /addChannelSub, /listChannelSub, /getStock";
                         sendTextMessageWithKeyboard(chatId, responseText, keyboardMarkup);
                     } else if ("Subscribe".equals(text)) {
                         SubscriptionManager.subscribe(chatId);
@@ -91,7 +103,41 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
                     throw new RuntimeException(e);
                 }
             }
+            if (text.startsWith("/getStock")) {
+                int userId = getUserIdFromMessage(text); // Здесь вам нужно извлечь userId из текста команды
+                try {
+                    ResponseEntity<String> response = combinedController.getStockInfoCommand(chatId, userId);
+                    sendTextMessageWithKeyboard(chatId, response.getBody(), keyboardMarkup);
+                } catch (TelegramApiException e) {
+                    e.printStackTrace();
+                    try {
+                        sendTextMessageWithKeyboard(chatId, "Ошибка при получении информации об акции", keyboardMarkup);
+                    } catch (TelegramApiException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+            }
         }
+    }
+
+    private int getUserIdFromMessage(String text) {
+        try {
+            // Регулярное выражение для извлечения userId из текста команды
+            Pattern pattern = Pattern.compile("/getStock\\s+(\\d+)");
+            Matcher matcher = pattern.matcher(text);
+
+            if (matcher.find()) {
+                // Получение найденного значения userId
+                String userIdStr = matcher.group(1);
+                return Integer.parseInt(userIdStr);
+            }
+        } catch (NumberFormatException e) {
+            // Обработка ошибки преобразования строки в число
+            e.printStackTrace();
+        }
+
+        // В случае ошибки возвращаем значение по умолчанию
+        return 0;
     }
 
     private ReplyKeyboardMarkup createKeyboardMarkup() {

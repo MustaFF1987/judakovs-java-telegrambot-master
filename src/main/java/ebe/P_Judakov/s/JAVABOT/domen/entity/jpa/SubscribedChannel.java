@@ -17,6 +17,7 @@ public class SubscribedChannel implements ebe.P_Judakov.s.JAVABOT.domen.entity.i
     private String channelTitle;  // Название канала
     private int lastArticleId;  // Последний отправленный артикул
 
+
     public int getId() {
         return id;
     }

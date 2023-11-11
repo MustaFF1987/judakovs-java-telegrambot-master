@@ -16,7 +16,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @Entity
 @Table(name = "user")
-public class JpaUser implements User  {
+public class JpaUser implements User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -36,19 +36,32 @@ public class JpaUser implements User  {
     @NotNull(message = "Name cannot be null")
     private String lastName;
 
+    @Column(name = "stock_ticker")
+    private String stockTicker; // Новое поле для хранения тикера акции пользователя
+
     @ManyToMany(mappedBy = "users")
     private List<JpaChat> chats;
 
     @OneToMany(mappedBy = "user")
     private List<JpaMessage> messages;
 
-    public JpaUser(int id, String username, String firstName, String lastName, List<JpaChat> chats, List<JpaMessage> messages) {
+    // Конструктор с новым полем stockTicker
+    public JpaUser(int id, String username, String firstName, String lastName, String stockTicker, List<JpaChat> chats, List<JpaMessage> messages) {
         this.id = id;
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.stockTicker = stockTicker;
         this.chats = chats;
         this.messages = messages;
+    }
+
+    public String getStockTicker() {
+        return stockTicker;
+    }
+
+    public void setStockTicker(String stockTicker) {
+        this.stockTicker = stockTicker;
     }
 
     @Override
