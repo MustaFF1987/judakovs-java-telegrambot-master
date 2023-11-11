@@ -39,7 +39,7 @@ public class StockDataService {
             Response response = client.newCall(request).execute();
             if (!response.isSuccessful()) {
                 // Обработка ошибок, например, вывод логов или выброс исключения
-                System.out.println("Error: " + response.code() + " - " + response.message());
+                System.out.println("Ошибка: " + response.code() + " - " + response.message());
                 return null;
             }
 

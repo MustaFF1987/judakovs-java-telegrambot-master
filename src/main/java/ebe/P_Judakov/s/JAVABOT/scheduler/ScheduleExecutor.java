@@ -37,7 +37,7 @@ public class ScheduleExecutor extends TelegramLongPollingBot {
         // Получаем список подписанных групп и отправляем уведомления о новых статьях
         List<SubscribedChannel> subscribedChannels = subscribedChannelRepository.findAll();
         for (SubscribedChannel channel : subscribedChannels) {
-            // Получаем новые статьи с вашего API (замените на ваш метод)
+            // Получаем новые статьи с API
             List<Article> newArticles = apiClientService.getNewArticles(channel.getLastArticleId());
 
             // Отправляем уведомления о новых статьях подписчикам
@@ -45,7 +45,7 @@ public class ScheduleExecutor extends TelegramLongPollingBot {
                 sendNotification((long) channel.getChatId(), article.getTitle());
             }
 
-            // Обновите lastArticleId для группы
+            // Обновляем lastArticleId для группы
             if (!newArticles.isEmpty()) {
                 channel.setLastArticleId(newArticles.get(newArticles.size() - 1).getId());
                 subscribedChannelRepository.save(channel);
@@ -66,12 +66,9 @@ public class ScheduleExecutor extends TelegramLongPollingBot {
         }
     }
 
-
     @Override
     public void onUpdateReceived(Update update) {
-
     }
-
     @Override
     public void onUpdatesReceived(List<Update> updates) {
         super.onUpdatesReceived(updates);

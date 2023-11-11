@@ -11,13 +11,11 @@ import java.util.List;
 
 @Service
 public class ApiClientService implements ApiClientInterface {
-    // Ваша логика для получения новых статей с вашего API
+    // Логика для получения новых статей с API
     @Override
     public List<Article> getNewArticles(int lastArticleId) {
-        // Ваш код для получения новых статей, начиная с lastArticleId
-        // ...
 
-        // Пример создания списка новых статей (замените на вашу логику)
+        // Создание списка новых статей
         List<Article> newArticles = new ArrayList<>();
         newArticles.add(new Article(1, "Новая статья 1"));
         newArticles.add(new Article(2, "Новая статья 2"));
