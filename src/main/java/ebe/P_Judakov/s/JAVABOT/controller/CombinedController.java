@@ -73,19 +73,14 @@ public class CombinedController {
     @GetMapping("/user/{userId}/stock")
     public ResponseEntity<String> getStockInfoCommand(@RequestParam("chatId") Long chatId, @PathVariable int userId) {
         JpaUser user = (JpaUser) userService.getUserById(userId);
-
         if (user == null || StringUtils.isEmpty(user.getStockTicker())) {
-            return ResponseEntity.badRequest().body("User or stock ticker not found");
+            return ResponseEntity.badRequest().body("Пользователь или тикер акции не найден");
         }
-
         StockDataEntity stockData = stockDataService.getStockData(user.getStockTicker());
-
         if (stockData == null) {
-            return ResponseEntity.badRequest().body("Error fetching stock data");
+            return ResponseEntity.badRequest().body("Ошибка при получении данных об акции");
         }
-
-        String stockInfo = String.format("Symbol: %s, Price: %s, Volume: %s", stockData.getSymbol(), stockData.getPrice(), stockData.getVolume());
-
+        String stockInfo = String.format("Символ: %s, Цена: %s, Объем: %s", stockData.getSymbol(), stockData.getPrice(), stockData.getVolume());
         return ResponseEntity.ok(stockInfo);
     }
 }

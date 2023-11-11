@@ -104,7 +104,7 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
                 }
             }
             if (text.startsWith("/getStock")) {
-                int userId = getUserIdFromMessage(text); // Здесь вам нужно извлечь userId из текста команды
+                int userId = getUserIdFromMessage(text); // извлекаем userId из текста команды
                 try {
                     ResponseEntity<String> response = combinedController.getStockInfoCommand(chatId, userId);
                     sendTextMessageWithKeyboard(chatId, response.getBody(), keyboardMarkup);
@@ -122,12 +122,12 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
 
     private int getUserIdFromMessage(String text) {
         try {
-            // Регулярное выражение для извлечения userId из текста команды
+            // Regex выражение для извлечения userId из текста команды
             Pattern pattern = Pattern.compile("/getStock\\s+(\\d+)");
             Matcher matcher = pattern.matcher(text);
 
             if (matcher.find()) {
-                // Получение найденного значения userId
+                // Получаем найденное значения userId
                 String userIdStr = matcher.group(1);
                 return Integer.parseInt(userIdStr);
             }
@@ -135,7 +135,6 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
             // Обработка ошибки преобразования строки в число
             e.printStackTrace();
         }
-
         // В случае ошибки возвращаем значение по умолчанию
         return 0;
     }

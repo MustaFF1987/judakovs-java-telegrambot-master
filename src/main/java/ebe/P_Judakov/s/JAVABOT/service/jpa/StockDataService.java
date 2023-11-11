@@ -50,7 +50,7 @@ public class StockDataService {
             return stockData;
 
         } catch (Exception e) {
-            // Обработка исключений, например, вывод логов или выброс исключения
+            // Обработка исключений
             e.printStackTrace();
             return null;
         }
