@@ -12,10 +12,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableJpaRepositories(basePackages = "com.potholeapi.repositories")
 @EnableTransactionManagement
+
 @ComponentScan({"ebe.P_Judakov.s.JAVABOT.repository.interfaces",
 		"ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces",
 		"ebe.P_Judakov.s.JAVABOT.service.interfaces",
-		"ebe.P_Judakov.s.JAVABOT.service.jpa"})
+		"ebe.P_Judakov.s.JAVABOT.service.jpa",
+		"ebe.P_Judakov.s.JAVABOT.scheduler"})
 public class Application {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);

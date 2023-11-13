@@ -30,6 +30,11 @@ public class ScheduleExecutor extends TelegramLongPollingBot {
     @Autowired
     ApiClientService apiClientService;
 
+    @Autowired
+    public ScheduleExecutor(SubscribedChannelRepository subscribedChannelRepository) {
+        this.subscribedChannelRepository = subscribedChannelRepository;
+    }
+
 
 
     @Scheduled(fixedDelayString = "PT05M") // Каждые 5 мин
@@ -83,5 +88,7 @@ public class ScheduleExecutor extends TelegramLongPollingBot {
     public void onRegister() {
         super.onRegister();
     }
+
+
 }
 

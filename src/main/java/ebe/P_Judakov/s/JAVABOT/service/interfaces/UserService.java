@@ -2,6 +2,7 @@ package ebe.P_Judakov.s.JAVABOT.service.interfaces;
 
 import ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.Chat;
 import ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.User;
+import ebe.P_Judakov.s.JAVABOT.domen.entity.jpa.JpaUser;
 import jakarta.transaction.Transactional;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public interface UserService {
     void deleteUser(int userId);
 
     // Получение списка всех пользователей:
-    List<User> getAllUsers();
+    List<JpaUser> getAllUsers();
 
     // Добавление пользователя в чат:
     User addUserToChat(int userId, Chat chat);

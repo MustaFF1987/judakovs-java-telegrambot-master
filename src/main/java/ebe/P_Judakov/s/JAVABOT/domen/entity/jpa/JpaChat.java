@@ -70,4 +70,8 @@ public class JpaChat implements Chat {
     public String getType() {
         return type;
     }
+
+    @Override
+    public void addUser(JpaUser user) {
+    }
 }

@@ -3,8 +3,10 @@ package ebe.P_Judakov.s.JAVABOT.repository.interfaces;
 import ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.Chat;
 import ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.Message;
 import ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.User;
+import ebe.P_Judakov.s.JAVABOT.domen.entity.jpa.JpaChat;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ChatRepository {
 
@@ -39,4 +41,5 @@ public interface ChatRepository {
     int countUsersByChat(Chat chat);
 
 
+    Optional<JpaChat> findById(int id);
 }

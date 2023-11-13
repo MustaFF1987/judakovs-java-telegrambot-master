@@ -3903,3 +3903,631 @@ org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error exe
 2023-11-13T12:39:18.553+02:00  INFO 13044 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-11-13T12:39:18.561+02:00  INFO 13044 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-11-13T12:39:18.574+02:00  INFO 13044 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-13T18:17:51.922+02:00  INFO 13360 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 13360 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-13T18:17:51.926+02:00  INFO 13360 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-13T18:17:52.066+02:00  INFO 13360 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-13T18:17:52.066+02:00  INFO 13360 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-13T18:17:52.952+02:00  INFO 13360 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-13T18:17:53.002+02:00  INFO 13360 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 0 JPA repository interfaces.
+2023-11-13T18:17:54.850+02:00  INFO 13360 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-13T18:17:54.869+02:00  INFO 13360 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-13T18:17:54.870+02:00  INFO 13360 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-13T18:17:54.998+02:00  INFO 13360 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-13T18:17:54.999+02:00  INFO 13360 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2933 ms
+2023-11-13T18:17:55.628+02:00  INFO 13360 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-13T18:17:55.749+02:00  INFO 13360 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-13T18:17:55.753+02:00  INFO 13360 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-13T18:17:56.543+02:00  INFO 13360 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-13T18:17:56.581+02:00  INFO 13360 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-13T18:17:57.128+02:00  INFO 13360 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@63870196
+2023-11-13T18:17:57.131+02:00  INFO 13360 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-13T18:17:57.221+02:00  WARN 13360 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-13T18:17:58.631+02:00  INFO 13360 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-13T18:17:58.801+02:00  INFO 13360 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T18:17:59.145+02:00  WARN 13360 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-13T18:17:59.576+02:00  INFO 13360 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-11-13T18:17:59.612+02:00  INFO 13360 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-13T18:17:59.629+02:00  INFO 13360 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Started Application in 8.401 seconds (process running for 9.239)
+2023-11-13T18:18:55.354+02:00  INFO 13360 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T18:18:55.360+02:00  INFO 13360 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-13T18:18:55.371+02:00  INFO 13360 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-13T20:16:21.109+02:00  INFO 4648 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 4648 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-13T20:16:21.112+02:00  INFO 4648 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-13T20:16:21.246+02:00  INFO 4648 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-13T20:16:21.247+02:00  INFO 4648 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-13T20:16:22.035+02:00  INFO 4648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-13T20:16:22.053+02:00  INFO 4648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2023-11-13T20:16:23.364+02:00  INFO 4648 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-13T20:16:23.379+02:00  INFO 4648 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-13T20:16:23.379+02:00  INFO 4648 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-13T20:16:23.483+02:00  INFO 4648 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-13T20:16:23.484+02:00  INFO 4648 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2236 ms
+2023-11-13T20:16:23.958+02:00  INFO 4648 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-13T20:16:24.040+02:00  INFO 4648 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-13T20:16:24.043+02:00  INFO 4648 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-13T20:16:24.417+02:00  INFO 4648 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-13T20:16:24.451+02:00  INFO 4648 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-13T20:16:25.015+02:00  INFO 4648 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@291ff40b
+2023-11-13T20:16:25.018+02:00  INFO 4648 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-13T20:16:25.122+02:00  WARN 4648 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-13T20:16:25.591+02:00 ERROR 4648 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Association 'ebe.P_Judakov.s.JAVABOT.domen.entity.role.TelegramUser.role' targets an unknown entity named 'org.apache.catalina.Role'
+2023-11-13T20:16:25.594+02:00  WARN 4648 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Association 'ebe.P_Judakov.s.JAVABOT.domen.entity.role.TelegramUser.role' targets an unknown entity named 'org.apache.catalina.Role'
+2023-11-13T20:16:25.598+02:00  INFO 4648 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-13T20:16:25.611+02:00  INFO 4648 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-13T20:16:25.614+02:00  INFO 4648 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-13T20:16:25.629+02:00  INFO 4648 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-13T20:16:25.658+02:00 ERROR 4648 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Association 'ebe.P_Judakov.s.JAVABOT.domen.entity.role.TelegramUser.role' targets an unknown entity named 'org.apache.catalina.Role'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166) ~[spring-context-6.0.13.jar:6.0.13]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940) ~[spring-context-6.0.13.jar:6.0.13]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.13.jar:6.0.13]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.5.jar:3.1.5]
+	at ebe.P_Judakov.s.JAVABOT.Application.main(Application.java:21) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.5.jar:3.1.5]
+Caused by: org.hibernate.AnnotationException: Association 'ebe.P_Judakov.s.JAVABOT.domen.entity.role.TelegramUser.role' targets an unknown entity named 'org.apache.catalina.Role'
+	at org.hibernate.boot.model.internal.ToOneFkSecondPass.doSecondPass(ToOneFkSecondPass.java:104) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processEndOfQueue(InFlightMetadataCollectorImpl.java:1965) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processFkSecondPassesInOrder(InFlightMetadataCollectorImpl.java:1914) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1820) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:331) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1383) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1454) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.13.jar:6.0.13]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.13.jar:6.0.13]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.13.jar:6.0.13]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.13.jar:6.0.13]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.13.jar:6.0.13]
+	... 21 common frames omitted
+
+2023-11-13T20:19:54.998+02:00  INFO 16160 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 16160 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-13T20:19:55.001+02:00  INFO 16160 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-13T20:19:55.099+02:00  INFO 16160 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-13T20:19:55.100+02:00  INFO 16160 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-13T20:19:55.798+02:00  INFO 16160 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-13T20:19:55.815+02:00  INFO 16160 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2023-11-13T20:19:57.065+02:00  INFO 16160 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-13T20:19:57.077+02:00  INFO 16160 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-13T20:19:57.078+02:00  INFO 16160 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-13T20:19:57.181+02:00  INFO 16160 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-13T20:19:57.181+02:00  INFO 16160 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2081 ms
+2023-11-13T20:19:57.571+02:00  INFO 16160 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-13T20:19:57.642+02:00  INFO 16160 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-13T20:19:57.646+02:00  INFO 16160 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-13T20:19:58.020+02:00  INFO 16160 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-13T20:19:58.054+02:00  INFO 16160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-13T20:19:58.501+02:00  INFO 16160 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@532aae91
+2023-11-13T20:19:58.504+02:00  INFO 16160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-13T20:19:58.566+02:00  WARN 16160 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-13T20:19:59.954+02:00  INFO 16160 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-13T20:20:00.489+02:00  INFO 16160 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:20:00.501+02:00  WARN 16160 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jpaUserService' defined in file [C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes\ebe\P_Judakov\s\JAVABOT\service\jpa\JpaUserService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-11-13T20:20:00.502+02:00  INFO 16160 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:20:00.508+02:00  INFO 16160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-13T20:20:00.518+02:00  INFO 16160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-13T20:20:00.520+02:00  INFO 16160 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-13T20:20:00.535+02:00  INFO 16160 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-13T20:20:00.563+02:00 ERROR 16160 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in ebe.P_Judakov.s.JAVABOT.service.jpa.JpaUserService required a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' in your configuration.
+
+2023-11-13T20:32:01.205+02:00  INFO 11588 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 11588 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-13T20:32:01.209+02:00  INFO 11588 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-13T20:32:01.322+02:00  INFO 11588 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-13T20:32:01.322+02:00  INFO 11588 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-13T20:32:02.027+02:00  INFO 11588 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-13T20:32:02.047+02:00  INFO 11588 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2023-11-13T20:32:03.419+02:00  INFO 11588 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-13T20:32:03.435+02:00  INFO 11588 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-13T20:32:03.436+02:00  INFO 11588 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-13T20:32:03.533+02:00  INFO 11588 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-13T20:32:03.534+02:00  INFO 11588 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2207 ms
+2023-11-13T20:32:03.831+02:00  INFO 11588 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-13T20:32:03.926+02:00  INFO 11588 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-13T20:32:03.928+02:00  INFO 11588 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-13T20:32:04.307+02:00  INFO 11588 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-13T20:32:04.339+02:00  INFO 11588 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-13T20:32:04.809+02:00  INFO 11588 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@56cf298a
+2023-11-13T20:32:04.811+02:00  INFO 11588 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-13T20:32:04.875+02:00  WARN 11588 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-13T20:32:06.219+02:00  INFO 11588 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-13T20:32:06.372+02:00  INFO 11588 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:32:06.387+02:00  WARN 11588 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jpaUserService' defined in file [C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes\ebe\P_Judakov\s\JAVABOT\service\jpa\JpaUserService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-11-13T20:32:06.388+02:00  INFO 11588 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:32:06.400+02:00  INFO 11588 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-13T20:32:06.419+02:00  INFO 11588 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-13T20:32:06.423+02:00  INFO 11588 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-13T20:32:06.451+02:00  INFO 11588 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-13T20:32:06.497+02:00 ERROR 11588 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in ebe.P_Judakov.s.JAVABOT.service.jpa.JpaUserService required a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' in your configuration.
+
+2023-11-13T20:32:57.601+02:00  INFO 20416 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 20416 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-13T20:32:57.604+02:00  INFO 20416 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-13T20:32:57.707+02:00  INFO 20416 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-13T20:32:57.707+02:00  INFO 20416 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-13T20:32:58.384+02:00  INFO 20416 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-13T20:32:58.399+02:00  INFO 20416 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2023-11-13T20:32:59.653+02:00  INFO 20416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-13T20:32:59.667+02:00  INFO 20416 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-13T20:32:59.668+02:00  INFO 20416 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-13T20:32:59.763+02:00  INFO 20416 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-13T20:32:59.764+02:00  INFO 20416 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2055 ms
+2023-11-13T20:33:00.098+02:00  INFO 20416 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-13T20:33:00.179+02:00  INFO 20416 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-13T20:33:00.182+02:00  INFO 20416 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-13T20:33:00.560+02:00  INFO 20416 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-13T20:33:00.596+02:00  INFO 20416 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-13T20:33:00.996+02:00  INFO 20416 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@26657071
+2023-11-13T20:33:00.999+02:00  INFO 20416 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-13T20:33:01.054+02:00  WARN 20416 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-13T20:33:02.438+02:00  INFO 20416 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-13T20:33:02.589+02:00  INFO 20416 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:33:02.602+02:00  WARN 20416 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jpaUserService' defined in file [C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes\ebe\P_Judakov\s\JAVABOT\service\jpa\JpaUserService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-11-13T20:33:02.603+02:00  INFO 20416 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:33:02.608+02:00  INFO 20416 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-13T20:33:02.620+02:00  INFO 20416 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-13T20:33:02.623+02:00  INFO 20416 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-13T20:33:02.637+02:00  INFO 20416 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-13T20:33:02.697+02:00 ERROR 20416 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in ebe.P_Judakov.s.JAVABOT.service.jpa.JpaUserService required a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' in your configuration.
+
+2023-11-13T20:34:04.345+02:00  INFO 11508 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 11508 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-13T20:34:04.348+02:00  INFO 11508 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-13T20:34:04.451+02:00  INFO 11508 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-13T20:34:04.451+02:00  INFO 11508 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-13T20:34:05.119+02:00  INFO 11508 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-13T20:34:05.139+02:00  INFO 11508 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2023-11-13T20:34:06.486+02:00  INFO 11508 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-13T20:34:06.498+02:00  INFO 11508 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-13T20:34:06.499+02:00  INFO 11508 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-13T20:34:06.608+02:00  INFO 11508 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-13T20:34:06.609+02:00  INFO 11508 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2157 ms
+2023-11-13T20:34:06.935+02:00  INFO 11508 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-13T20:34:07.027+02:00  INFO 11508 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-13T20:34:07.032+02:00  INFO 11508 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-13T20:34:07.414+02:00  INFO 11508 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-13T20:34:07.447+02:00  INFO 11508 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-13T20:34:07.900+02:00  INFO 11508 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2d31a912
+2023-11-13T20:34:07.903+02:00  INFO 11508 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-13T20:34:07.966+02:00  WARN 11508 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-13T20:34:09.344+02:00  INFO 11508 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-13T20:34:09.472+02:00  INFO 11508 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:34:09.486+02:00  WARN 11508 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jpaUserService' defined in file [C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes\ebe\P_Judakov\s\JAVABOT\service\jpa\JpaUserService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-11-13T20:34:09.487+02:00  INFO 11508 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:34:09.492+02:00  INFO 11508 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-13T20:34:09.504+02:00  INFO 11508 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-13T20:34:09.506+02:00  INFO 11508 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-13T20:34:09.525+02:00  INFO 11508 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-13T20:34:09.609+02:00 ERROR 11508 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in ebe.P_Judakov.s.JAVABOT.service.jpa.JpaUserService required a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' in your configuration.
+
+2023-11-13T20:36:37.552+02:00  INFO 8132 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 8132 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-13T20:36:37.557+02:00  INFO 8132 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-13T20:36:37.646+02:00  INFO 8132 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-13T20:36:37.647+02:00  INFO 8132 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-13T20:36:38.382+02:00  INFO 8132 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-13T20:36:38.403+02:00  INFO 8132 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2023-11-13T20:36:39.755+02:00  INFO 8132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-13T20:36:39.772+02:00  INFO 8132 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-13T20:36:39.774+02:00  INFO 8132 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-13T20:36:39.881+02:00  INFO 8132 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-13T20:36:39.882+02:00  INFO 8132 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2235 ms
+2023-11-13T20:36:40.186+02:00  INFO 8132 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-13T20:36:40.260+02:00  INFO 8132 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-13T20:36:40.263+02:00  INFO 8132 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-13T20:36:40.622+02:00  INFO 8132 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-13T20:36:40.655+02:00  INFO 8132 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-13T20:36:41.092+02:00  INFO 8132 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@14ac68ba
+2023-11-13T20:36:41.096+02:00  INFO 8132 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-13T20:36:41.155+02:00  WARN 8132 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-13T20:36:42.501+02:00  INFO 8132 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-13T20:36:42.634+02:00  INFO 8132 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:36:42.648+02:00  WARN 8132 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jpaUserService' defined in file [C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes\ebe\P_Judakov\s\JAVABOT\service\jpa\JpaUserService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-11-13T20:36:42.649+02:00  INFO 8132 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:36:42.654+02:00  INFO 8132 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-13T20:36:42.664+02:00  INFO 8132 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-13T20:36:42.666+02:00  INFO 8132 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-13T20:36:42.685+02:00  INFO 8132 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-13T20:36:42.736+02:00 ERROR 8132 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in ebe.P_Judakov.s.JAVABOT.service.jpa.JpaUserService required a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' in your configuration.
+
+2023-11-13T20:38:51.894+02:00  INFO 1272 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 1272 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-13T20:38:51.898+02:00  INFO 1272 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-13T20:38:51.983+02:00  INFO 1272 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-13T20:38:51.984+02:00  INFO 1272 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-13T20:38:52.734+02:00  INFO 1272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-13T20:38:52.752+02:00  INFO 1272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2023-11-13T20:38:54.024+02:00  INFO 1272 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-13T20:38:54.039+02:00  INFO 1272 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-13T20:38:54.040+02:00  INFO 1272 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-13T20:38:54.144+02:00  INFO 1272 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-13T20:38:54.145+02:00  INFO 1272 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2160 ms
+2023-11-13T20:38:54.387+02:00  INFO 1272 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-13T20:38:54.457+02:00  INFO 1272 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-13T20:38:54.466+02:00  INFO 1272 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-13T20:38:54.834+02:00  INFO 1272 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-13T20:38:54.875+02:00  INFO 1272 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-13T20:38:55.295+02:00  INFO 1272 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@37d9608a
+2023-11-13T20:38:55.297+02:00  INFO 1272 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-13T20:38:55.357+02:00  WARN 1272 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-13T20:38:56.750+02:00  INFO 1272 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-13T20:38:56.888+02:00  INFO 1272 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:38:57.264+02:00  WARN 1272 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'scheduleExecutor': Unsatisfied dependency expressed through field 'subscribedChannelRepository': No qualifying bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-11-13T20:38:57.264+02:00  INFO 1272 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:38:57.268+02:00  INFO 1272 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-13T20:38:57.277+02:00  INFO 1272 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-13T20:38:57.280+02:00  INFO 1272 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-13T20:38:57.295+02:00  INFO 1272 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-13T20:38:57.328+02:00 ERROR 1272 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field subscribedChannelRepository in ebe.P_Judakov.s.JAVABOT.scheduler.ScheduleExecutor required a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository' in your configuration.
+
+2023-11-13T20:41:58.086+02:00  INFO 8656 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 8656 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-13T20:41:58.090+02:00  INFO 8656 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-13T20:41:58.182+02:00  INFO 8656 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-13T20:41:58.182+02:00  INFO 8656 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-13T20:41:58.864+02:00  INFO 8656 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-13T20:41:58.886+02:00  INFO 8656 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2023-11-13T20:42:00.588+02:00  INFO 8656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-13T20:42:00.603+02:00  INFO 8656 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-13T20:42:00.604+02:00  INFO 8656 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-13T20:42:00.725+02:00  INFO 8656 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-13T20:42:00.726+02:00  INFO 8656 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2544 ms
+2023-11-13T20:42:01.073+02:00  INFO 8656 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-13T20:42:01.146+02:00  INFO 8656 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-13T20:42:01.150+02:00  INFO 8656 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-13T20:42:01.534+02:00  INFO 8656 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-13T20:42:01.571+02:00  INFO 8656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-13T20:42:02.032+02:00  INFO 8656 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@470cb2c
+2023-11-13T20:42:02.034+02:00  INFO 8656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-13T20:42:02.091+02:00  WARN 8656 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-13T20:42:03.397+02:00  INFO 8656 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-13T20:42:03.522+02:00  INFO 8656 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:42:03.535+02:00  WARN 8656 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jpaUserService' defined in file [C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes\ebe\P_Judakov\s\JAVABOT\service\jpa\JpaUserService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-11-13T20:42:03.536+02:00  INFO 8656 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:42:03.542+02:00  INFO 8656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-13T20:42:03.552+02:00  INFO 8656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-13T20:42:03.554+02:00  INFO 8656 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-13T20:42:03.568+02:00  INFO 8656 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-13T20:42:03.597+02:00 ERROR 8656 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in ebe.P_Judakov.s.JAVABOT.service.jpa.JpaUserService required a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' in your configuration.
+
+2023-11-13T20:42:44.871+02:00  INFO 21880 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 21880 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-13T20:42:44.875+02:00  INFO 21880 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-13T20:42:45.006+02:00  INFO 21880 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-13T20:42:45.006+02:00  INFO 21880 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-13T20:42:45.776+02:00  INFO 21880 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-13T20:42:45.793+02:00  INFO 21880 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2023-11-13T20:42:47.224+02:00  INFO 21880 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-13T20:42:47.239+02:00  INFO 21880 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-13T20:42:47.241+02:00  INFO 21880 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-13T20:42:47.346+02:00  INFO 21880 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-13T20:42:47.347+02:00  INFO 21880 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2339 ms
+2023-11-13T20:42:47.597+02:00  INFO 21880 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-13T20:42:47.677+02:00  INFO 21880 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-13T20:42:47.680+02:00  INFO 21880 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-13T20:42:48.065+02:00  INFO 21880 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-13T20:42:48.128+02:00  INFO 21880 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-13T20:42:48.562+02:00  INFO 21880 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2def6ea
+2023-11-13T20:42:48.564+02:00  INFO 21880 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-13T20:42:48.625+02:00  WARN 21880 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-13T20:42:49.967+02:00  INFO 21880 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-13T20:42:50.090+02:00  INFO 21880 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:42:50.445+02:00  WARN 21880 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'scheduleExecutor' defined in file [C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes\ebe\P_Judakov\s\JAVABOT\scheduler\ScheduleExecutor.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-11-13T20:42:50.446+02:00  INFO 21880 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:42:50.452+02:00  INFO 21880 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-13T20:42:50.464+02:00  INFO 21880 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-13T20:42:50.466+02:00  INFO 21880 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-13T20:42:50.479+02:00  INFO 21880 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-13T20:42:50.508+02:00 ERROR 21880 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in ebe.P_Judakov.s.JAVABOT.scheduler.ScheduleExecutor required a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository' in your configuration.
+
+2023-11-13T20:44:38.921+02:00  INFO 22208 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 22208 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-13T20:44:38.924+02:00  INFO 22208 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-13T20:44:39.038+02:00  INFO 22208 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-13T20:44:39.039+02:00  INFO 22208 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-13T20:44:39.717+02:00  INFO 22208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-13T20:44:39.736+02:00  INFO 22208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2023-11-13T20:44:41.046+02:00  INFO 22208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-13T20:44:41.065+02:00  INFO 22208 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-13T20:44:41.066+02:00  INFO 22208 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-13T20:44:41.210+02:00  INFO 22208 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-13T20:44:41.211+02:00  INFO 22208 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2169 ms
+2023-11-13T20:44:41.502+02:00  INFO 22208 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-13T20:44:41.573+02:00  INFO 22208 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-13T20:44:41.576+02:00  INFO 22208 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-13T20:44:41.976+02:00  INFO 22208 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-13T20:44:42.014+02:00  INFO 22208 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-13T20:44:42.572+02:00  INFO 22208 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4b7b05a0
+2023-11-13T20:44:42.575+02:00  INFO 22208 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-13T20:44:42.637+02:00  WARN 22208 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-13T20:44:43.938+02:00  INFO 22208 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-13T20:44:44.064+02:00  INFO 22208 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:44:44.083+02:00  WARN 22208 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jpaUserService' defined in file [C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes\ebe\P_Judakov\s\JAVABOT\service\jpa\JpaUserService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-11-13T20:44:44.083+02:00  INFO 22208 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:44:44.089+02:00  INFO 22208 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-13T20:44:44.099+02:00  INFO 22208 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-13T20:44:44.101+02:00  INFO 22208 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-13T20:44:44.115+02:00  INFO 22208 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-13T20:44:44.151+02:00 ERROR 22208 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in ebe.P_Judakov.s.JAVABOT.service.jpa.JpaUserService required a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' in your configuration.
+
+2023-11-13T20:46:38.820+02:00  INFO 5544 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 5544 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-13T20:46:38.828+02:00  INFO 5544 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-13T20:46:38.931+02:00  INFO 5544 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-13T20:46:38.932+02:00  INFO 5544 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-13T20:46:39.599+02:00  INFO 5544 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-13T20:46:39.615+02:00  INFO 5544 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2023-11-13T20:46:40.893+02:00  INFO 5544 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-13T20:46:40.906+02:00  INFO 5544 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-13T20:46:40.906+02:00  INFO 5544 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-13T20:46:40.997+02:00  INFO 5544 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-13T20:46:40.998+02:00  INFO 5544 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2065 ms
+2023-11-13T20:46:41.280+02:00  INFO 5544 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-13T20:46:41.357+02:00  INFO 5544 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-13T20:46:41.364+02:00  INFO 5544 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-13T20:46:41.766+02:00  INFO 5544 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-13T20:46:41.807+02:00  INFO 5544 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-13T20:46:42.293+02:00  INFO 5544 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@210865af
+2023-11-13T20:46:42.297+02:00  INFO 5544 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-13T20:46:42.360+02:00  WARN 5544 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-13T20:46:43.741+02:00  INFO 5544 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-13T20:46:43.858+02:00  INFO 5544 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:46:43.874+02:00  WARN 5544 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jpaUserService' defined in file [C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes\ebe\P_Judakov\s\JAVABOT\service\jpa\JpaUserService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-11-13T20:46:43.874+02:00  INFO 5544 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:46:43.879+02:00  INFO 5544 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-13T20:46:43.892+02:00  INFO 5544 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-13T20:46:43.894+02:00  INFO 5544 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-13T20:46:43.908+02:00  INFO 5544 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-13T20:46:43.938+02:00 ERROR 5544 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in ebe.P_Judakov.s.JAVABOT.service.jpa.JpaUserService required a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' in your configuration.
+
+2023-11-13T20:47:53.523+02:00  INFO 12348 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 12348 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-13T20:47:53.526+02:00  INFO 12348 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-13T20:47:53.661+02:00  INFO 12348 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-13T20:47:53.661+02:00  INFO 12348 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-13T20:47:54.380+02:00  INFO 12348 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-13T20:47:54.397+02:00  INFO 12348 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2023-11-13T20:47:55.736+02:00  INFO 12348 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-13T20:47:55.750+02:00  INFO 12348 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-13T20:47:55.751+02:00  INFO 12348 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-13T20:47:55.843+02:00  INFO 12348 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-13T20:47:55.844+02:00  INFO 12348 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2181 ms
+2023-11-13T20:47:56.140+02:00  INFO 12348 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-13T20:47:56.205+02:00  INFO 12348 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-13T20:47:56.207+02:00  INFO 12348 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-13T20:47:56.565+02:00  INFO 12348 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-13T20:47:56.605+02:00  INFO 12348 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-13T20:47:57.036+02:00  INFO 12348 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@68d26b81
+2023-11-13T20:47:57.039+02:00  INFO 12348 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-13T20:47:57.106+02:00  WARN 12348 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-13T20:47:58.424+02:00  INFO 12348 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-13T20:47:58.556+02:00  INFO 12348 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:47:58.572+02:00  WARN 12348 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jpaUserService' defined in file [C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes\ebe\P_Judakov\s\JAVABOT\service\jpa\JpaUserService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-11-13T20:47:58.572+02:00  INFO 12348 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T20:47:58.578+02:00  INFO 12348 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-13T20:47:58.589+02:00  INFO 12348 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-13T20:47:58.591+02:00  INFO 12348 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-13T20:47:58.605+02:00  INFO 12348 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-13T20:47:58.664+02:00 ERROR 12348 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in ebe.P_Judakov.s.JAVABOT.service.jpa.JpaUserService required a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' in your configuration.
+
+2023-11-13T21:04:15.916+02:00  INFO 2984 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 2984 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-13T21:04:15.919+02:00  INFO 2984 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-13T21:04:16.019+02:00  INFO 2984 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-13T21:04:16.020+02:00  INFO 2984 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-13T21:04:16.692+02:00  INFO 2984 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-13T21:04:16.706+02:00  INFO 2984 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2023-11-13T21:04:17.918+02:00  INFO 2984 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-13T21:04:17.931+02:00  INFO 2984 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-13T21:04:17.931+02:00  INFO 2984 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-13T21:04:18.025+02:00  INFO 2984 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-13T21:04:18.026+02:00  INFO 2984 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2006 ms
+2023-11-13T21:04:18.304+02:00  INFO 2984 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-13T21:04:18.381+02:00  INFO 2984 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-13T21:04:18.386+02:00  INFO 2984 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-13T21:04:18.786+02:00  INFO 2984 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-13T21:04:18.826+02:00  INFO 2984 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-13T21:04:19.255+02:00  INFO 2984 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@37f08d24
+2023-11-13T21:04:19.257+02:00  INFO 2984 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-13T21:04:19.319+02:00  WARN 2984 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-13T21:04:20.718+02:00  INFO 2984 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-13T21:04:20.854+02:00  INFO 2984 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T21:04:20.871+02:00  WARN 2984 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jpaUserService' defined in file [C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes\ebe\P_Judakov\s\JAVABOT\service\jpa\JpaUserService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-11-13T21:04:20.872+02:00  INFO 2984 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-13T21:04:20.878+02:00  INFO 2984 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-13T21:04:20.889+02:00  INFO 2984 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-13T21:04:20.892+02:00  INFO 2984 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-13T21:04:20.906+02:00  INFO 2984 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-13T21:04:20.968+02:00 ERROR 2984 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in ebe.P_Judakov.s.JAVABOT.service.jpa.JpaUserService required a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' in your configuration.
+

@@ -1,5 +1,6 @@
 package ebe.P_Judakov.s.JAVABOT.domen.entity.jpa;
 import ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.User;
+import ebe.P_Judakov.s.JAVABOT.domen.entity.role.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -36,6 +37,10 @@ public class JpaUser implements User {
     @NotNull(message = "Name cannot be null")
     private String lastName;
 
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
+
     @Column(name = "stock_ticker")
     private String stockTicker; // Новое поле для хранения тикера акции пользователя
 
@@ -44,6 +49,10 @@ public class JpaUser implements User {
 
     @OneToMany(mappedBy = "user")
     private List<JpaMessage> messages;
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
 
     // Конструктор с новым полем stockTicker
     public JpaUser(int id, String username, String firstName, String lastName, String stockTicker, List<JpaChat> chats, List<JpaMessage> messages) {
@@ -72,6 +81,8 @@ public class JpaUser implements User {
         return id == jpaUser.id && Objects.equals(username, jpaUser.username) && Objects.equals(firstName, jpaUser.firstName) && Objects.equals(lastName, jpaUser.lastName);
     }
 
+
+
     @Override
     public int hashCode() {
         return Objects.hash(id, username, firstName, lastName);
@@ -83,7 +94,7 @@ public class JpaUser implements User {
     }
 
     @Override
-    public String getUserName() {
+    public String getUsername() {
         return username;
     }
 
@@ -95,6 +106,11 @@ public class JpaUser implements User {
     @Override
     public String getLastName() {
         return lastName;
+    }
+
+    @Override
+    public void setChatId(Long chatId) {
+
     }
 }
 

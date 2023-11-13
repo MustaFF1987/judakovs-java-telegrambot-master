@@ -32,9 +32,14 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
     private SubscribedChannelRepository subscribedChannelRepository;
 
     // переменная для хранения ввода с клавиатуры
+    @Autowired
     private ReplyKeyboardMarkup keyboardMarkup;
 
+    @Autowired
     private CombinedController combinedController;
+
+    @Autowired
+    private JpaUserService userService;
 
     public void setCombinedController(CombinedController combinedController) {
         this.combinedController = combinedController;
@@ -60,6 +65,12 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
                         // Обработка команды /help
                         String responseText = "Список доступных команд: /start, /help, /stop, /addChannelSub, /listChannelSub, /getStock";
                         sendTextMessageWithKeyboard(chatId, responseText, keyboardMarkup);
+                    } else if ("SetUserRole".equals(text)) {
+                            // Пользователь хочет установить роль
+                            String responseText = "Введите роль для установки:";
+                            sendTextMessageWithKeyboard(chatId, responseText, keyboardMarkup);
+                            // Пример: установка роли "USER"
+                            userService.setUserRole(chatId, "USER");
                     } else if ("Subscribe".equals(text)) {
                         SubscriptionManager.subscribe(chatId);
                         String responseText = "Вы подписались на уведомления от бота.";
@@ -69,7 +80,7 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
                         keyboardMarkup = removeSubscribeButton(keyboardMarkup);
 
                         // Отправляем сообщение о котировках в чат
-                        String stockQuote = "Текущие котировки: $100"; // временное решение
+                        String stockQuote = "Текущие котировки: $100 за акцию"; // временное решение
                         sendStockQuoteToChat(chatId.toString(), stockQuote);
 
                         // Добавляем пустого бота в чат
@@ -106,15 +117,14 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
                         // Обработка введенного тикера
                         String stockTicker = text.substring("/getStock ".length()).trim();
                         int userId = getUserIdFromMessage(text); // извлекаем userId из текста команды
-                        if (combinedController != null) {
+                        if (combinedController !=null){
                             try {
-                                ResponseEntity<String> response = combinedController.getStockInfoCommand(chatId, userId);
+                                ResponseEntity<String> response = combinedController.getStockInfoCommand(chatId, text, userId);
                                 sendTextMessageWithKeyboard(chatId, response.getBody(), keyboardMarkup);
                             } catch (TelegramApiException e) {
                                 e.printStackTrace();
                                 sendTextMessageWithKeyboard(chatId, "Ошибка при получении информации об акции", keyboardMarkup);
-                            }
-                        }
+                            }}
                     } else {
                         String responseText = "Неизвестная команда. Используйте /help для получения списка команд.";
                         sendTextMessageWithKeyboard(chatId, responseText, keyboardMarkup);
@@ -134,8 +144,6 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
         }
     }
 
-
-
     // Метод для добавления пустого бота в чат
     public void addEmptyBotToChat(String chatId) {
         // токен пустого бота
@@ -148,7 +156,7 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
             throw new RuntimeException(e);
         }
         try {
-            TelegramLongPollingBot emptyBot = new EmptyBot(emptyBotToken); // Создайте класс EmptyBot с токеном
+            TelegramLongPollingBot emptyBot = new EmptyBot(emptyBotToken);
             telegramBotsApi.registerBot(emptyBot);
 
             // Добаление пустого бота в чат
