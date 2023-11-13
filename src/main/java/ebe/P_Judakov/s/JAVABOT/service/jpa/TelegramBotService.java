@@ -1,6 +1,7 @@
 package ebe.P_Judakov.s.JAVABOT.service.jpa;
 import ebe.P_Judakov.s.JAVABOT.controller.CombinedController;
 import ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.SubscribedChannel;
+import ebe.P_Judakov.s.JAVABOT.domen.entity.jpa.EmptyBot;
 import ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -63,6 +64,16 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
                         SubscriptionManager.subscribe(chatId);
                         String responseText = "Вы подписались на уведомления от бота.";
                         sendTextMessageWithKeyboard(chatId, responseText, keyboardMarkup);
+
+                        // Убираем кнопку "Subscribe" из клавиатуры
+                        keyboardMarkup = removeSubscribeButton(keyboardMarkup);
+
+                        // Отправляем сообщение о котировках в чат
+                        String stockQuote = "Текущие котировки: $100"; // временное решение
+                        sendStockQuoteToChat(chatId.toString(), stockQuote);
+
+                        // Добавляем пустого бота в чат
+                        addEmptyBotToChat(chatId.toString());
                     } else if ("Unsubscribe".equals(text)) {
                         SubscriptionManager.unsubscribe(chatId);
                         String responseText = "Вы отписались от уведомлений от бота.";
@@ -87,6 +98,23 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
                             responseText.append(subscribedChannel.getChannelTitle()).append("\n");
                         }
                         sendTextMessageWithKeyboard(chatId, responseText.toString(), keyboardMarkup);
+                    } else if (text.startsWith("/getStock")) {
+                        // Обработка команды /getStock
+                        String responseText = "Введите тикер акции";
+                        sendTextMessageWithKeyboard(chatId, responseText, keyboardMarkup);
+                    } else if (text.startsWith("/getStock ")) {
+                        // Обработка введенного тикера
+                        String stockTicker = text.substring("/getStock ".length()).trim();
+                        int userId = getUserIdFromMessage(text); // извлекаем userId из текста команды
+                        if (combinedController != null) {
+                            try {
+                                ResponseEntity<String> response = combinedController.getStockInfoCommand(chatId, userId);
+                                sendTextMessageWithKeyboard(chatId, response.getBody(), keyboardMarkup);
+                            } catch (TelegramApiException e) {
+                                e.printStackTrace();
+                                sendTextMessageWithKeyboard(chatId, "Ошибка при получении информации об акции", keyboardMarkup);
+                            }
+                        }
                     } else {
                         String responseText = "Неизвестная команда. Используйте /help для получения списка команд.";
                         sendTextMessageWithKeyboard(chatId, responseText, keyboardMarkup);
@@ -103,22 +131,56 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
                     throw new RuntimeException(e);
                 }
             }
-            if (text.startsWith("/getStock")) {
-                int userId = getUserIdFromMessage(text); // извлекаем userId из текста команды
-                try {
-                    ResponseEntity<String> response = combinedController.getStockInfoCommand(chatId, userId);
-                    sendTextMessageWithKeyboard(chatId, response.getBody(), keyboardMarkup);
-                } catch (TelegramApiException e) {
-                    e.printStackTrace();
-                    try {
-                        sendTextMessageWithKeyboard(chatId, "Ошибка при получении информации об акции", keyboardMarkup);
-                    } catch (TelegramApiException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                }
-            }
         }
     }
+
+
+
+    // Метод для добавления пустого бота в чат
+    public void addEmptyBotToChat(String chatId) {
+        // токен пустого бота
+        String emptyBotToken = "6553161657:AAGK4LG72f3lDBcJWW-SUBTodrM_2HBvsUc";
+
+        TelegramBotsApi telegramBotsApi = null;
+        try {
+            telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
+        } catch (TelegramApiException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            TelegramLongPollingBot emptyBot = new EmptyBot(emptyBotToken); // Создайте класс EmptyBot с токеном
+            telegramBotsApi.registerBot(emptyBot);
+
+            // Добаление пустого бота в чат
+            sendTextMessageWithKeyboard(Long.parseLong(chatId), "Пустой бот добавлен в чат.", keyboardMarkup);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+            // Обработка ошибок при добавлении пустого бота
+        }
+    }
+
+    // Метод для отправки сообщений о котировках акций в чат:
+    public void sendStockQuoteToChat(String chatId, String stockQuote) {
+        try {
+            sendTextMessageWithKeyboard(Long.parseLong(chatId), stockQuote, keyboardMarkup);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+            // Обработка ошибок при отправке сообщения
+        }
+    }
+
+
+    //  метод removeSubscribeButton для удаления кнопки "Подписаться" из клавиатуры.
+    private ReplyKeyboardMarkup removeSubscribeButton(ReplyKeyboardMarkup keyboardMarkup) {
+        List<KeyboardRow> keyboard = keyboardMarkup.getKeyboard();
+
+        // Перебираем строки клавиатуры и удаляем кнопку "Subscribe"
+        for (KeyboardRow row : keyboard) {
+            row.removeIf(button -> "Subscribe".equals(button.getText()));
+        }
+        return keyboardMarkup;
+    }
+
 
     private int getUserIdFromMessage(String text) {
         try {
