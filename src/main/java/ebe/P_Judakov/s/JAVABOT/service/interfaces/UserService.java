@@ -32,4 +32,5 @@ public interface UserService {
     User addUserToChat(int userId, Chat chat);
 
 
+    void setUserRole(Long chatId, String role);
 }

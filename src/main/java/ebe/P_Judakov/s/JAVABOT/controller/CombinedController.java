@@ -14,13 +14,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.IOException;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.slf4j.Logger;
@@ -98,7 +95,6 @@ public class CombinedController {
         }*/
     ///user/123/stock?chatId=456&text=someText
     ///user/123/stock?text=someText
-
     @GetMapping("/user/{userId}/stock")
     public ResponseEntity<String> getStockInfoCommand(
             @RequestParam(value = "chatId", defaultValue = "0") Long chatId,
@@ -155,6 +151,32 @@ public class CombinedController {
             e.printStackTrace();
         }
         return null;
+    }
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(CombinedController.class);
+    private final OkHttpClient client = new OkHttpClient();
+    @GetMapping("/getCustomizable=symbol")
+    public ResponseEntity<String> getCustomizable(@RequestParam String symbol) {
+        try {
+            Request request = new Request.Builder()
+                    .url("https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol=" + symbol)
+                    .get()
+                    .addHeader("X-RapidAPI-Key", "4dfa492779msh47fb50b07bc7c09p11ff37jsn1c0c729af2c0")
+                    .addHeader("X-RapidAPI-Host", "alpha-vantage.p.rapidapi.com")
+                    .build();
+
+            Response response = client.newCall(request).execute();
+
+            // Здесь вы можете обработать тело ответа и вернуть его в виде строки или в любом другом формате
+            String responseBody = response.body().string();
+            LOGGER.info("Ответ от API получен успешно");
+            // Возвращаем тело ответа вместе с кодом состояния
+            return ResponseEntity.ok(responseBody);
+
+        } catch (IOException e) {
+            LOGGER.error("Ошибка при выполнении запроса к API", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Ошибка при выполнении запроса");
+        }
     }
 }
 

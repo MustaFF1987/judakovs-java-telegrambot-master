@@ -1,9 +1,12 @@
 package ebe.P_Judakov.s.JAVABOT.service.jpa;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
 import ebe.P_Judakov.s.JAVABOT.controller.CombinedController;
 import ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.SubscribedChannel;
 import ebe.P_Judakov.s.JAVABOT.domen.entity.jpa.EmptyBot;
 import ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import ebe.P_Judakov.s.JAVABOT.service.interfaces.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -15,16 +18,18 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
 
 import org.springframework.beans.factory.annotation.Qualifier;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 @Service
 public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_Judakov.s.JAVABOT.service.interfaces.TelegramBotService {
 
@@ -32,30 +37,43 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
     private SubscribedChannelRepository subscribedChannelRepository;
 
     // переменная для хранения ввода с клавиатуры
-    @Autowired
     private ReplyKeyboardMarkup keyboardMarkup;
+    private UserService userService;
 
-    @Autowired
     private CombinedController combinedController;
-
-    @Autowired
-    private JpaUserService userService;
+    private static final Logger LOGGER = LoggerFactory.getLogger(TelegramBotService.class);
 
     public void setCombinedController(CombinedController combinedController) {
         this.combinedController = combinedController;
     }
 
+    public void setUserService(JpaUserService userService) {
+        this.userService = userService;
+    }
+
+    private void handleSetUserRole(Long chatId, String role) {
+        String responseText = "Введите роль для установки:";
+        try {
+            sendTextMessageWithKeyboard(chatId, responseText, keyboardMarkup);
+        } catch (TelegramApiException e) {
+            throw new RuntimeException(e);
+        }
+        userService.setUserRole(chatId, role);
+    }
+
+    //переменная состояния
+    private Map<Long, String> userState = new HashMap<>();
     @Override
     public void onUpdateReceived(Update update) {
+        // Логируем приходящие обновления
+        LOGGER.info("Received update: {}", update);
         if (update.hasMessage() && update.getMessage().hasText()) {
             String text = update.getMessage().getText();
             Long chatId = update.getMessage().getChatId();
-
             if (text.startsWith("/start") && keyboardMarkup == null) {
                 // Инициализация клавиатуры при старте чата
                 keyboardMarkup = createKeyboardMarkup();
             }
-
             if (keyboardMarkup != null) {
                 try {
                     // Используйте клавиатуру
@@ -63,34 +81,30 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
                         sendWelcomeMessage(chatId, keyboardMarkup);
                     } else if (text.startsWith("/help")) {
                         // Обработка команды /help
-                        String responseText = "Список доступных команд: /start, /help, /stop, /addChannelSub, /listChannelSub, /getStock";
+                        String responseText = "Список доступных команд: /start, /help, /stop, /getCustomizable";
                         sendTextMessageWithKeyboard(chatId, responseText, keyboardMarkup);
-                    } else if ("SetUserRole".equals(text)) {
-                            // Пользователь хочет установить роль
-                            String responseText = "Введите роль для установки:";
-                            sendTextMessageWithKeyboard(chatId, responseText, keyboardMarkup);
-                            // Пример: установка роли "USER"
-                            userService.setUserRole(chatId, "USER");
+
                     } else if ("Subscribe".equals(text)) {
                         SubscriptionManager.subscribe(chatId);
                         String responseText = "Вы подписались на уведомления от бота.";
                         sendTextMessageWithKeyboard(chatId, responseText, keyboardMarkup);
-
                         // Убираем кнопку "Subscribe" из клавиатуры
                         keyboardMarkup = removeSubscribeButton(keyboardMarkup);
-
-                        // Отправляем сообщение о котировках в чат
-                        String stockQuote = "Текущие котировки: $100 за акцию"; // временное решение
-                        sendStockQuoteToChat(chatId.toString(), stockQuote);
-
                         // Добавляем пустого бота в чат
                         addEmptyBotToChat(chatId.toString());
+
                     } else if ("Unsubscribe".equals(text)) {
                         SubscriptionManager.unsubscribe(chatId);
                         String responseText = "Вы отписались от уведомлений от бота.";
                         sendTextMessageWithKeyboard(chatId, responseText, keyboardMarkup);
+
+                    } else if ("SetUserRole".equals(text)) {
+                        handleSetUserRole(chatId, "USER");
+                    } else if ("SetAdminRole".equals(text)) {
+                        handleSetUserRole(chatId, "ADMIN");
                     } else if (text.startsWith("/stop")) {
                         sendStopMessage(chatId, keyboardMarkup);
+
                     } else if (text.startsWith("/addChannelSub")) {
                         // Пользователь хочет добавить подписку на канал
                         // Сообщение пользователю, запрашивая `channel_id`
@@ -101,36 +115,47 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
                         subscribedChannelRepository.save(subscribedChannel);
                         subscribedChannel.setChannelTitle("Название канала");
                         subscribedChannelRepository.save(subscribedChannel); // Сохранение в базе данных
-                    } else if (text.startsWith("/listChannelSub")) {
-                        // Обработка команды /listChannelSub
-                        List<SubscribedChannel> subscribedChannels = subscribedChannelRepository.findByChatId(chatId);
-                        StringBuilder responseText = new StringBuilder("Ваши подписки:\n");
-                        for (SubscribedChannel subscribedChannel : subscribedChannels) {
-                            responseText.append(subscribedChannel.getChannelTitle()).append("\n");
-                        }
                         sendTextMessageWithKeyboard(chatId, responseText.toString(), keyboardMarkup);
-                    } else if (text.startsWith("/getStock")) {
-                        // Обработка команды /getStock
-                        String responseText = "Введите тикер акции";
-                        sendTextMessageWithKeyboard(chatId, responseText, keyboardMarkup);
-                    } else if (text.startsWith("/getStock ")) {
-                        // Обработка введенного тикера
-                        String stockTicker = text.substring("/getStock ".length()).trim();
-                        int userId = getUserIdFromMessage(text); // извлекаем userId из текста команды
-                        if (combinedController !=null){
-                            try {
-                                ResponseEntity<String> response = combinedController.getStockInfoCommand(chatId, text, userId);
-                                sendTextMessageWithKeyboard(chatId, response.getBody(), keyboardMarkup);
-                            } catch (TelegramApiException e) {
-                                e.printStackTrace();
-                                sendTextMessageWithKeyboard(chatId, "Ошибка при получении информации об акции", keyboardMarkup);
-                            }}
+
+                    } else if (text.startsWith("/getCustomizable")) {
+                        // Проверяем, находится ли пользователь в режиме ожидания тикера акции
+                        if (userState.containsKey(chatId) && userState.get(chatId).equals("AWAITING_TICKER")) {
+                            // Пользователь ввел тикер, обрабатываем запрос
+                            String stockTicker = getStockTickerFromMessage("Введите тикер акции:");
+                            if (stockTicker != null) {
+                                // Вызываем новый метод для обработки запроса к API
+                                String response = getCustomizable(text);
+                                // Обработка ответа от API
+                                if (response != null) {
+                                    // Отправляем ответ пользователю
+                                    sendTextMessageWithKeyboard2(update, response, keyboardMarkup, userState);
+                                }
+                                // Сбрасываем состояние пользователя
+                                userState.remove(chatId);
+                            } else {
+                                // Тикер не был извлечен, запрашиваем его снова
+                                sendTextMessageWithKeyboard2(update, "Тикер акции не найден. Введите тикер акции:", keyboardMarkup, userState);
+                            }
+                        } else {
+                            // Пользователь еще не ввел тикер, отправляем ему запрос
+                            sendTextMessageWithKeyboard2(update, "Введите тикер акции:", keyboardMarkup, userState);
+                            // Устанавливаем состояние пользователя в режим ожидания тикера
+                            userState.put(chatId, "AWAITING_TICKER");
+                        }
                     } else {
-                        String responseText = "Неизвестная команда. Используйте /help для получения списка команд.";
-                        sendTextMessageWithKeyboard(chatId, responseText, keyboardMarkup);
+                        // В этом месте вы можете добавить свою логику обработки текстовых сообщений
+                        // После формирования ответа отправляем его пользователю
+                        String[] stockData = text.split(";"); // Предполагаем, что данные акции разделены символом ";"
+                        StringBuilder response = new StringBuilder();
+                        for (String data : stockData) {
+                            response.append(data.trim()).append("\n"); // Добавляем каждый показатель акции на новой строке
+                        }
+                        // Отправляем ответ пользователю
+                        sendTextMessageWithKeyboard2(update, response.toString(), keyboardMarkup, userState);
+
                     }
-                    processIncomingMessage(update);
                 } catch (TelegramApiException e) {
+                    LOGGER.error("Error processing Telegram API request", e);
                     throw new RuntimeException(e);
                 }
             } else {
@@ -138,9 +163,76 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
                 try {
                     processIncomingMessage(update);
                 } catch (TelegramApiException e) {
+                    LOGGER.error("Error processing Telegram API request", e);
                     throw new RuntimeException(e);
                 }
             }
+        }
+    }
+
+    public void sendTextMessageWithKeyboard2(Update update, String text, ReplyKeyboardMarkup keyboardMarkup, Map<Long, String> userState) {
+        if (update.hasMessage() && update.getMessage().hasText()) {
+            Long chatId = update.getMessage().getChatId();
+            try {
+                if (text.startsWith("/getCustomizable")) {
+                    // Проверяем, находится ли пользователь в режиме ожидания тикера акции
+                    if (userState.containsKey(chatId) && userState.get(chatId).equals("AWAITING_TICKER")) {
+                        // Пользователь ввел тикер, обрабатываем запрос
+                        String stockTicker = getStockTickerFromMessage("Введите тикер акции");
+                        if (stockTicker != null) {
+                            // Вызываем новый метод для обработки запроса к API
+                            String response = getCustomizable(stockTicker);
+                            // Обработка ответа от API
+                            if (response != null) {
+                                // Отправляем ответ пользователю
+                                sendTextMessageWithKeyboard2(chatId, response, keyboardMarkup);
+                            }
+                            // Сбрасываем состояние пользователя
+                            userState.remove(chatId);
+                        } else {
+                            // Тикер не был извлечен, запрашиваем его снова
+                            sendTextMessageWithKeyboard2(chatId, "Тикер акции не найден. Введите тикер акции:", keyboardMarkup);
+                        }
+                    } else {
+                        // Пользователь еще не ввел тикер, отправляем ему запрос
+                        sendTextMessageWithKeyboard2(chatId, "Введите тикер акции:", keyboardMarkup);
+                        // Устанавливаем состояние пользователя в режим ожидания тикера
+                        userState.put(chatId, "AWAITING_TICKER");
+                    }
+                    // Обработка введенного тикера
+                    String stockTicker = text.substring("/getStock ".length()).trim();
+                    int userId = getUserIdFromMessage(text); // извлекаем userId из текста команды
+                    if (combinedController !=null){
+                        try {
+                            ResponseEntity<String> response = combinedController.getStockInfoCommand(chatId, text, userId);
+                            sendTextMessageWithKeyboard(chatId, response.getBody(), keyboardMarkup);
+                        } catch (TelegramApiException e) {
+                            e.printStackTrace();
+                            sendTextMessageWithKeyboard(chatId, "Ошибка при получении информации об акции", keyboardMarkup);
+                        }}
+
+                    // Отправляем сообщение о котировках в чат
+                    String stockQuote = "Текущие котировки: $100 за акцию"; // временное решение
+                    sendStockQuoteToChat(chatId.toString(), stockQuote);
+
+                } else {
+                    // В этом месте вы можете добавить свою логику обработки текстовых сообщений
+                    // После формирования ответа отправляем его пользователю
+                    String[] stockData = text.split(";"); // Предполагаем, что данные акции разделены символом ";"
+                    StringBuilder response = new StringBuilder();
+                    for (String data : stockData) {
+                        response.append(data.trim()).append("\n"); // Добавляем каждый показатель акции на новой строке
+                    }
+                    // Отправляем ответ пользователю
+                    sendTextMessageWithKeyboard2(chatId, response.toString(), keyboardMarkup);
+                }
+
+            } catch (TelegramApiException e) {
+                // Обработка ошибок при отправке сообщения
+                LOGGER.error("Ошибка при отправке сообщения", e);
+            }
+        } else {
+            // Логика обработки, если нет текстового сообщения
         }
     }
 
@@ -190,6 +282,76 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
     }
 
 
+
+    private void sendTextMessageWithKeyboard2(Long chatId, String text, ReplyKeyboardMarkup keyboardMarkup) throws TelegramApiException {
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId.toString());
+        message.setText(text);
+
+        // Устанавливаем клавиатуру в сообщение
+        message.setReplyMarkup(keyboardMarkup);
+
+        Message sentMessage = execute(message);
+        // Обработка успешной отправки сообщения (sentMessage содержит информацию о сообщении)
+        System.out.println("Сообщение успешно отправлено: " + sentMessage);
+    }
+
+    // Метод для извлечения тикера из текста сообщения
+    private String getStockTickerFromMessage(String text) {
+        try {
+            // Regex выражение для извлечения тикера из текста сообщения
+            Pattern pattern = Pattern.compile("/getStock\\s+(\\S+)");
+            Matcher matcher = pattern.matcher(text);
+
+            if (matcher.find()) {
+                // Получаем найденное значение тикера
+                return matcher.group(1);
+            }
+        } catch (Exception e) {
+            // Обработка ошибок
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private final OkHttpClient client = new OkHttpClient();
+
+
+    public String getCustomizable(String text) {
+        try {
+            Request request = new Request.Builder()
+                    .url("https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol=TSLA")
+                    .get()
+                    .addHeader("X-RapidAPI-Key", "4dfa492779msh47fb50b07bc7c09p11ff37jsn1c0c729af2c0")
+                    .addHeader("X-RapidAPI-Host", "alpha-vantage.p.rapidapi.com")
+                    .build();
+
+            Response response = client.newCall(request).execute();
+
+            // Логируем запрос
+            LOGGER.info("Выполнен запрос к API. URL: {}, Метод: GET", request.url());
+
+            // Обработка ответа
+            if (response.isSuccessful()) {
+                String responseBody = response.body().string();
+
+                // Логируем успешный ответ
+                LOGGER.info("Получен успешный ответ от API. Тело ответа: {}", responseBody);
+
+                return responseBody;
+            } else {
+                // Логируем ошибку
+                LOGGER.error("Ошибка при выполнении запроса. Код ошибки: {}, Сообщение: {}", response.code(), response.message());
+                return null;
+            }
+        } catch (Exception e) {
+            // Логируем исключение
+            LOGGER.error("Ошибка при выполнении запроса", e);
+            return null;
+        }
+    }
+
+
     private int getUserIdFromMessage(String text) {
         try {
             // Regex выражение для извлечения userId из текста команды
@@ -204,6 +366,7 @@ public class TelegramBotService extends TelegramLongPollingBot implements ebe.P_
         } catch (NumberFormatException e) {
             // Обработка ошибки преобразования строки в число
             e.printStackTrace();
+
         }
         // В случае ошибки возвращаем значение по умолчанию
         return 0;

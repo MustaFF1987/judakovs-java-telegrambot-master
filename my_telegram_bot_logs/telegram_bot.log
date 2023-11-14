@@ -4531,3 +4531,464 @@ Action:
 
 Consider defining a bean of type 'ebe.P_Judakov.s.JAVABOT.repository.interfaces.UserRepository' in your configuration.
 
+2023-11-14T19:26:22.966+02:00  INFO 7960 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 7960 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-14T19:26:22.970+02:00  INFO 7960 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-14T19:26:23.077+02:00  INFO 7960 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-14T19:26:23.077+02:00  INFO 7960 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-14T19:26:23.855+02:00  INFO 7960 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-14T19:26:23.939+02:00  INFO 7960 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 2 JPA repository interfaces.
+2023-11-14T19:26:25.430+02:00  INFO 7960 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-14T19:26:25.446+02:00  INFO 7960 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-14T19:26:25.447+02:00  INFO 7960 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-14T19:26:25.555+02:00  INFO 7960 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-14T19:26:25.555+02:00  INFO 7960 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2477 ms
+2023-11-14T19:26:25.876+02:00  INFO 7960 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-14T19:26:25.979+02:00  INFO 7960 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-14T19:26:25.983+02:00  INFO 7960 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-14T19:26:26.449+02:00  INFO 7960 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-14T19:26:26.491+02:00  INFO 7960 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-14T19:26:26.985+02:00  INFO 7960 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6049f7b0
+2023-11-14T19:26:26.987+02:00  INFO 7960 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-14T19:26:27.057+02:00  WARN 7960 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-14T19:26:28.475+02:00  INFO 7960 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-14T19:26:28.597+02:00  INFO 7960 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14T19:26:29.286+02:00  WARN 7960 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'telegramBotService': Unsatisfied dependency expressed through field 'keyboardMarkup': No qualifying bean of type 'org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-11-14T19:26:29.286+02:00  INFO 7960 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14T19:26:29.290+02:00  INFO 7960 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-14T19:26:29.300+02:00  INFO 7960 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-14T19:26:29.303+02:00  INFO 7960 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-14T19:26:29.318+02:00  INFO 7960 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-14T19:26:29.350+02:00 ERROR 7960 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field keyboardMarkup in ebe.P_Judakov.s.JAVABOT.service.jpa.TelegramBotService required a bean of type 'org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup' in your configuration.
+
+2023-11-14T19:28:42.327+02:00  INFO 6544 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 6544 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-14T19:28:42.331+02:00  INFO 6544 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-14T19:28:42.417+02:00  INFO 6544 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-14T19:28:42.417+02:00  INFO 6544 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-14T19:28:43.153+02:00  INFO 6544 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-14T19:28:43.244+02:00  INFO 6544 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 2 JPA repository interfaces.
+2023-11-14T19:28:44.778+02:00  INFO 6544 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-14T19:28:44.794+02:00  INFO 6544 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-14T19:28:44.794+02:00  INFO 6544 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-14T19:28:44.904+02:00  INFO 6544 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-14T19:28:44.904+02:00  INFO 6544 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2486 ms
+2023-11-14T19:28:45.393+02:00  INFO 6544 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-14T19:28:45.520+02:00  INFO 6544 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-14T19:28:45.524+02:00  INFO 6544 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-14T19:28:45.971+02:00  INFO 6544 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-14T19:28:46.045+02:00  INFO 6544 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-14T19:28:46.503+02:00  INFO 6544 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6631c97d
+2023-11-14T19:28:46.506+02:00  INFO 6544 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-14T19:28:46.583+02:00  WARN 6544 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-14T19:28:48.154+02:00  INFO 6544 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-14T19:28:48.291+02:00  INFO 6544 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14T19:28:48.961+02:00  WARN 6544 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'telegramBotService': Unsatisfied dependency expressed through field 'keyboardMarkup': No qualifying bean of type 'org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-11-14T19:28:48.963+02:00  INFO 6544 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14T19:28:48.968+02:00  INFO 6544 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-14T19:28:48.982+02:00  INFO 6544 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-14T19:28:48.987+02:00  INFO 6544 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-14T19:28:49.002+02:00  INFO 6544 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-14T19:28:49.032+02:00 ERROR 6544 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field keyboardMarkup in ebe.P_Judakov.s.JAVABOT.service.jpa.TelegramBotService required a bean of type 'org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup' in your configuration.
+
+2023-11-14T19:29:53.708+02:00  INFO 8468 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 8468 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-14T19:29:53.711+02:00  INFO 8468 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-14T19:29:53.822+02:00  INFO 8468 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-14T19:29:53.823+02:00  INFO 8468 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-14T19:29:54.468+02:00  INFO 8468 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-14T19:29:54.538+02:00  INFO 8468 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 2 JPA repository interfaces.
+2023-11-14T19:29:55.801+02:00  INFO 8468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-14T19:29:55.813+02:00  INFO 8468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-14T19:29:55.813+02:00  INFO 8468 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-14T19:29:55.906+02:00  INFO 8468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-14T19:29:55.907+02:00  INFO 8468 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2083 ms
+2023-11-14T19:29:56.239+02:00  INFO 8468 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-14T19:29:56.318+02:00  INFO 8468 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-14T19:29:56.322+02:00  INFO 8468 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-14T19:29:56.684+02:00  INFO 8468 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-14T19:29:56.734+02:00  INFO 8468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-14T19:29:57.169+02:00  INFO 8468 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3f3e6aa1
+2023-11-14T19:29:57.172+02:00  INFO 8468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-14T19:29:57.231+02:00  WARN 8468 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-14T19:29:58.633+02:00  INFO 8468 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-14T19:29:58.755+02:00  INFO 8468 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14T19:29:59.436+02:00  WARN 8468 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'telegramBotService': Unsatisfied dependency expressed through field 'keyboardMarkup': No qualifying bean of type 'org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-11-14T19:29:59.437+02:00  INFO 8468 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14T19:29:59.441+02:00  INFO 8468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-14T19:29:59.450+02:00  INFO 8468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-14T19:29:59.453+02:00  INFO 8468 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-14T19:29:59.465+02:00  INFO 8468 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-14T19:29:59.493+02:00 ERROR 8468 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field keyboardMarkup in ebe.P_Judakov.s.JAVABOT.service.jpa.TelegramBotService required a bean of type 'org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup' in your configuration.
+
+2023-11-14T19:36:28.430+02:00  INFO 6700 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 6700 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-14T19:36:28.432+02:00  INFO 6700 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-14T19:36:28.539+02:00  INFO 6700 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-14T19:36:28.540+02:00  INFO 6700 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-14T19:36:29.510+02:00  INFO 6700 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-14T19:36:29.585+02:00  INFO 6700 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 2 JPA repository interfaces.
+2023-11-14T19:36:31.561+02:00  INFO 6700 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-14T19:36:31.580+02:00  INFO 6700 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-14T19:36:31.580+02:00  INFO 6700 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-14T19:36:31.688+02:00  INFO 6700 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-14T19:36:31.688+02:00  INFO 6700 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3147 ms
+2023-11-14T19:36:32.472+02:00  INFO 6700 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-14T19:36:32.823+02:00  INFO 6700 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-14T19:36:32.826+02:00  INFO 6700 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-14T19:36:33.313+02:00  INFO 6700 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-14T19:36:33.353+02:00  INFO 6700 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-14T19:36:34.124+02:00  INFO 6700 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6049f7b0
+2023-11-14T19:36:34.128+02:00  INFO 6700 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-14T19:36:34.208+02:00  WARN 6700 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-14T19:36:35.707+02:00  INFO 6700 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-14T19:36:35.837+02:00  INFO 6700 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14T19:36:36.629+02:00  WARN 6700 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'telegramBotService': Unsatisfied dependency expressed through field 'keyboardMarkup': No qualifying bean of type 'org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-11-14T19:36:36.630+02:00  INFO 6700 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14T19:36:36.633+02:00  INFO 6700 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-14T19:36:36.647+02:00  INFO 6700 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-14T19:36:36.650+02:00  INFO 6700 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-14T19:36:36.664+02:00  INFO 6700 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-14T19:36:36.696+02:00 ERROR 6700 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field keyboardMarkup in ebe.P_Judakov.s.JAVABOT.service.jpa.TelegramBotService required a bean of type 'org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup' in your configuration.
+
+2023-11-14T19:39:44.552+02:00  INFO 20704 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 20704 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-14T19:39:44.557+02:00  INFO 20704 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-14T19:39:44.677+02:00  INFO 20704 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-14T19:39:44.677+02:00  INFO 20704 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-14T19:39:45.334+02:00  INFO 20704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-14T19:39:45.415+02:00  INFO 20704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 2 JPA repository interfaces.
+2023-11-14T19:39:46.778+02:00  INFO 20704 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-14T19:39:46.791+02:00  INFO 20704 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-14T19:39:46.793+02:00  INFO 20704 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-14T19:39:46.891+02:00  INFO 20704 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-14T19:39:46.892+02:00  INFO 20704 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2214 ms
+2023-11-14T19:39:47.168+02:00  INFO 20704 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-14T19:39:47.239+02:00  INFO 20704 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-14T19:39:47.242+02:00  INFO 20704 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-14T19:39:47.642+02:00  INFO 20704 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-14T19:39:47.711+02:00  INFO 20704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-14T19:39:48.156+02:00  INFO 20704 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@15a7d638
+2023-11-14T19:39:48.158+02:00  INFO 20704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-14T19:39:48.218+02:00  WARN 20704 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-14T19:39:49.583+02:00  INFO 20704 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-14T19:39:49.715+02:00  INFO 20704 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14T19:39:50.407+02:00  WARN 20704 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'scheduleExecutor' defined in file [C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes\ebe\P_Judakov\s\JAVABOT\scheduler\ScheduleExecutor.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'subscribedChannelRepository' defined in ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository defined in @EnableJpaRepositories declared on Application: Not a managed type: interface ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.SubscribedChannel
+2023-11-14T19:39:50.408+02:00  INFO 20704 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14T19:39:50.412+02:00  INFO 20704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-14T19:39:50.422+02:00  INFO 20704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-14T19:39:50.425+02:00  INFO 20704 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-14T19:39:50.440+02:00  INFO 20704 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-14T19:39:50.465+02:00 ERROR 20704 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'scheduleExecutor' defined in file [C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes\ebe\P_Judakov\s\JAVABOT\scheduler\ScheduleExecutor.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'subscribedChannelRepository' defined in ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository defined in @EnableJpaRepositories declared on Application: Not a managed type: interface ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.SubscribedChannel
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1189) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:950) ~[spring-context-6.0.13.jar:6.0.13]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.13.jar:6.0.13]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.5.jar:3.1.5]
+	at ebe.P_Judakov.s.JAVABOT.Application.main(Application.java:23) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.5.jar:3.1.5]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'subscribedChannelRepository' defined in ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository defined in @EnableJpaRepositories declared on Application: Not a managed type: interface ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.SubscribedChannel
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:910) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788) ~[spring-beans-6.0.13.jar:6.0.13]
+	... 24 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Not a managed type: interface ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.SubscribedChannel
+	at org.hibernate.metamodel.model.domain.internal.JpaMetamodelImpl.managedType(JpaMetamodelImpl.java:192) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.managedType(MappingMetamodelImpl.java:467) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.managedType(MappingMetamodelImpl.java:97) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.springframework.data.jpa.repository.support.JpaMetamodelEntityInformation.<init>(JpaMetamodelEntityInformation.java:82) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaEntityInformationSupport.getEntityInformation(JpaEntityInformationSupport.java:69) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getEntityInformation(JpaRepositoryFactory.java:246) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:211) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:194) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:81) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:317) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:279) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:245) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.util.Lazy.get(Lazy.java:114) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:285) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:132) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.13.jar:6.0.13]
+	... 35 common frames omitted
+
+2023-11-14T19:53:18.315+02:00  INFO 18524 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 18524 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-14T19:53:18.319+02:00  INFO 18524 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-14T19:53:18.409+02:00  INFO 18524 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-14T19:53:18.409+02:00  INFO 18524 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-14T19:53:19.175+02:00  INFO 18524 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-14T19:53:19.263+02:00  INFO 18524 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 2 JPA repository interfaces.
+2023-11-14T19:53:20.728+02:00  INFO 18524 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-14T19:53:20.744+02:00  INFO 18524 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-14T19:53:20.744+02:00  INFO 18524 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-14T19:53:20.841+02:00  INFO 18524 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-14T19:53:20.841+02:00  INFO 18524 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2431 ms
+2023-11-14T19:53:21.126+02:00  INFO 18524 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-14T19:53:21.220+02:00  INFO 18524 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-14T19:53:21.226+02:00  INFO 18524 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-14T19:53:21.622+02:00  INFO 18524 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-14T19:53:21.684+02:00  INFO 18524 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-14T19:53:22.116+02:00  INFO 18524 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@15a7d638
+2023-11-14T19:53:22.119+02:00  INFO 18524 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-14T19:53:22.193+02:00  WARN 18524 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-14T19:53:23.598+02:00  INFO 18524 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-14T19:53:23.726+02:00  INFO 18524 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14T19:53:24.384+02:00  WARN 18524 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'scheduleExecutor' defined in file [C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes\ebe\P_Judakov\s\JAVABOT\scheduler\ScheduleExecutor.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'subscribedChannelRepository' defined in ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository defined in @EnableJpaRepositories declared on Application: Not a managed type: interface ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.SubscribedChannel
+2023-11-14T19:53:24.385+02:00  INFO 18524 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14T19:53:24.390+02:00  INFO 18524 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-14T19:53:24.400+02:00  INFO 18524 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-14T19:53:24.403+02:00  INFO 18524 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-14T19:53:24.416+02:00  INFO 18524 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-14T19:53:24.438+02:00 ERROR 18524 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'scheduleExecutor' defined in file [C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes\ebe\P_Judakov\s\JAVABOT\scheduler\ScheduleExecutor.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'subscribedChannelRepository' defined in ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository defined in @EnableJpaRepositories declared on Application: Not a managed type: interface ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.SubscribedChannel
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1189) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:950) ~[spring-context-6.0.13.jar:6.0.13]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.13.jar:6.0.13]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.5.jar:3.1.5]
+	at ebe.P_Judakov.s.JAVABOT.Application.main(Application.java:23) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.5.jar:3.1.5]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'subscribedChannelRepository' defined in ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository defined in @EnableJpaRepositories declared on Application: Not a managed type: interface ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.SubscribedChannel
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:910) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788) ~[spring-beans-6.0.13.jar:6.0.13]
+	... 24 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Not a managed type: interface ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.SubscribedChannel
+	at org.hibernate.metamodel.model.domain.internal.JpaMetamodelImpl.managedType(JpaMetamodelImpl.java:192) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.managedType(MappingMetamodelImpl.java:467) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.managedType(MappingMetamodelImpl.java:97) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.springframework.data.jpa.repository.support.JpaMetamodelEntityInformation.<init>(JpaMetamodelEntityInformation.java:82) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaEntityInformationSupport.getEntityInformation(JpaEntityInformationSupport.java:69) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getEntityInformation(JpaRepositoryFactory.java:246) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:211) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:194) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:81) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:317) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:279) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:245) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.util.Lazy.get(Lazy.java:114) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:285) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:132) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.13.jar:6.0.13]
+	... 35 common frames omitted
+
+2023-11-14T21:20:23.674+02:00  INFO 18380 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : Starting Application using Java 17.0.9 with PID 18380 (C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes started by pavel in C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master)
+2023-11-14T21:20:23.678+02:00  INFO 18380 --- [restartedMain] ebe.P_Judakov.s.JAVABOT.Application      : No active profile set, falling back to 1 default profile: "default"
+2023-11-14T21:20:23.797+02:00  INFO 18380 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-14T21:20:23.798+02:00  INFO 18380 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-14T21:20:24.619+02:00  INFO 18380 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-14T21:20:24.701+02:00  INFO 18380 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 2 JPA repository interfaces.
+2023-11-14T21:20:26.245+02:00  INFO 18380 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-14T21:20:26.261+02:00  INFO 18380 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-14T21:20:26.261+02:00  INFO 18380 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-14T21:20:26.377+02:00  INFO 18380 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-14T21:20:26.378+02:00  INFO 18380 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2579 ms
+2023-11-14T21:20:26.727+02:00  INFO 18380 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-14T21:20:26.835+02:00  INFO 18380 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-14T21:20:26.838+02:00  INFO 18380 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-14T21:20:27.334+02:00  INFO 18380 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-14T21:20:27.384+02:00  INFO 18380 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-14T21:20:27.931+02:00  INFO 18380 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@35c1d2a1
+2023-11-14T21:20:27.933+02:00  INFO 18380 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-14T21:20:28.015+02:00  WARN 18380 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-14T21:20:29.460+02:00  INFO 18380 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-14T21:20:29.669+02:00  INFO 18380 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14T21:20:30.472+02:00  WARN 18380 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'scheduleExecutor' defined in file [C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes\ebe\P_Judakov\s\JAVABOT\scheduler\ScheduleExecutor.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'subscribedChannelRepository' defined in ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository defined in @EnableJpaRepositories declared on Application: Not a managed type: interface ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.SubscribedChannel
+2023-11-14T21:20:30.473+02:00  INFO 18380 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14T21:20:30.477+02:00  INFO 18380 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-14T21:20:30.488+02:00  INFO 18380 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-14T21:20:30.492+02:00  INFO 18380 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-14T21:20:30.513+02:00  INFO 18380 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-14T21:20:30.538+02:00 ERROR 18380 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'scheduleExecutor' defined in file [C:\Users\pavel\IdeaProjects\judakovs-java-telegrambot-master\target\classes\ebe\P_Judakov\s\JAVABOT\scheduler\ScheduleExecutor.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'subscribedChannelRepository' defined in ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository defined in @EnableJpaRepositories declared on Application: Not a managed type: interface ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.SubscribedChannel
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1189) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:950) ~[spring-context-6.0.13.jar:6.0.13]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.13.jar:6.0.13]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.5.jar:3.1.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.5.jar:3.1.5]
+	at ebe.P_Judakov.s.JAVABOT.Application.main(Application.java:23) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.5.jar:3.1.5]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'subscribedChannelRepository' defined in ebe.P_Judakov.s.JAVABOT.repository.interfaces.SubscribedChannelRepository defined in @EnableJpaRepositories declared on Application: Not a managed type: interface ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.SubscribedChannel
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:910) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788) ~[spring-beans-6.0.13.jar:6.0.13]
+	... 24 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Not a managed type: interface ebe.P_Judakov.s.JAVABOT.domen.entity.interfaces.SubscribedChannel
+	at org.hibernate.metamodel.model.domain.internal.JpaMetamodelImpl.managedType(JpaMetamodelImpl.java:192) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.managedType(MappingMetamodelImpl.java:467) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.managedType(MappingMetamodelImpl.java:97) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.springframework.data.jpa.repository.support.JpaMetamodelEntityInformation.<init>(JpaMetamodelEntityInformation.java:82) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaEntityInformationSupport.getEntityInformation(JpaEntityInformationSupport.java:69) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getEntityInformation(JpaRepositoryFactory.java:246) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:211) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:194) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:81) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:317) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:279) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:245) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.util.Lazy.get(Lazy.java:114) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:285) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:132) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.13.jar:6.0.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.13.jar:6.0.13]
+	... 35 common frames omitted
+

@@ -50,6 +50,9 @@ public class JpaUser implements User {
     @OneToMany(mappedBy = "user")
     private List<JpaMessage> messages;
 
+    @Column(name = "chat_id")
+    private Long chatId;
+
     public void setRole(Role role) {
         this.role = role;
     }

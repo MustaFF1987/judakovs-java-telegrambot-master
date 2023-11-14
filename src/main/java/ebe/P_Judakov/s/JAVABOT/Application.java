@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
 @Configuration
-@EnableJpaRepositories(basePackages = "com.potholeapi.repositories")
+@EnableJpaRepositories(basePackages = "ebe.P_Judakov.s.JAVABOT.repository.interfaces")
 @EnableTransactionManagement
 
 @ComponentScan({"ebe.P_Judakov.s.JAVABOT.repository.interfaces",

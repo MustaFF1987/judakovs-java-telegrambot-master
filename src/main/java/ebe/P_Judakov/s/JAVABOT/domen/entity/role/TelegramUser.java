@@ -22,6 +22,8 @@ import jakarta.persistence.*;
         @JoinColumn(name = "role_id")
         private Role role;
 
+
+
         public TelegramUser() {
         }
 
